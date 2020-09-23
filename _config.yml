@@ -5,7 +5,7 @@ author: Sarah
 copyDate: 2020
 version: v0.0.1-Beta
 
-baseurl: / # URL of the site, i.e: learninglms.gq/ (must finish with "/")
+baseurl: # URL of the site, i.e: learninglms.gq
 
 permalink: /:title/
 markdown: kramdown
