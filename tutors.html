@@ -1,0 +1,80 @@
+---
+title: tutors
+subtitle: See all the courses contributors in Learning
+img: /images/tutors-parallax.jpg
+layout: pageParallax
+---
+
+<div class="row" data-toggle="isotope">
+
+  {% for tutors in site.data.tutors %}
+    {% for tutor in tutors %}
+      {% if tutor.name != nil %}
+
+      {% assign courses = "" | split: ',' %}
+      {% for post in site.posts reversed %}
+        {% assign course = site.data.courses[post.course] %}
+        {% assign courseTutor = site.data.tutors[course.tutor] %}
+
+        {% if courseTutor.name == tutor.name %}
+          {% assign courses = courses | push: course %}
+        {% endif %}
+      {% endfor %}
+
+      {% assign course = courses.last %}
+
+        <div class="item col-xs-12 col-sm-6 col-lg-4">
+          <div class="panel panel-default paper-shadow" data-z="0.5">
+
+            <div class="panel-heading">
+              <!-- TODO: Instructor page -->
+              <h3 class="panel-title"><a href="#">{{ tutor.name }}</a></h3>
+            </div>
+
+            <div class="panel-body">
+              <div class="media">
+                <div class="media-left">
+                  <!-- TODO: Instructor page -->
+                  <a href="#">
+                    <img src="{{ tutor.pp }}" width="110" height="110">
+                  </a>
+                </div>
+                <div class="media-body">
+                  <p>{{ tutor.about }}</p>
+                  {% for role in tutor.roles %}
+                  <span class="label label-default">{{ role }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-footer">
+              <h5 class="margin-none">Latest course</h5>
+              <div class="media">
+
+                <div class="media-left">
+                  <a href="{{ course.url }}" class="icon-block half bg-gray-dark"><img src="{{ course.thumb }}"
+                    width="50" height="50"></a>
+                </div>
+
+                <div class="media-body">
+                  <h4 class="media-heading"><a href="{{ course.url }}"
+                      class="text-primary">{{ course.title }}</a></h4>
+                  <p class="small text-muted">{{ course.description }}</p>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="panel-footer text-right">
+              <!-- TODO: Instructor page -->
+              <a href="#" class="btn btn-sm btn-primary">View profile</a>
+            </div>
+
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+</div>

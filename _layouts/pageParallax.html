@@ -1,0 +1,22 @@
+{% include head.html %}
+
+<div class="parallax cover overlay height-300 height-500-lg height-320-xs">
+  <img class="parallax-layer" src="{{ page.img }}">
+  <div class="parallax-layer overlay overlay-full" data-opacity="true">
+    <div class="v-center">
+      <div class="container">
+        <h1 class="text-display-1 overlay-bg-white-strong
+                     display-inline-block">{{ page.title }}</h1>
+        <p class="text-subhead overlay-bg-white-strong">{{ page.subtitle }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-section">
+  <div class="container">
+    {{ content | markdownify }}
+  </div>
+</div>
+
+{% include footer.html %}

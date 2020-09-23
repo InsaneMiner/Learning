@@ -3,7 +3,10 @@ sarah:
   twitter: HermadesCGCO
   pp: /images/tutorIcons/Sarah.jpg
   about: >-
-    Hi! I'm Sarah. I'm a grey-hat hacktivist, I am a free software enthusiast
+    Hi!. I'm a grey-hat hacktivist, I am a free software enthusiast
     I am not a professional but I like teaching other what I know, as the knowledge
     is worth nothing if it belongs to only one person.<br><br>
     I am 15 years old, and the creator of Learning. I hope you enjoy it and learn so much <3
+  roles:
+    - Hacker
+    - Programmer
