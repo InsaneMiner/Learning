@@ -1,0 +1,41 @@
+[
+  {% for post in site.posts %}
+  {% assign course = site.data.courses[post.course] %}
+  {% assign tutor = site.data.tutors[course.tutor] %}
+  {
+    "title": "{{ post.title }}",
+    "tags": {{ course.tags | jsonify }},
+    "duration": "{{ course.duration }}",
+    "url": "{{ post.url }}",
+    "thumb": "{{ post.thumb }}",
+    "tutor": "{{ course.tutor }}",
+    "tutorName": "{{ site.data.tutors[course.tutor].name }}",
+    "tutorProfile": "{{ site.data.tutors[course.tutor].pp }}",
+    "language": "{{ course.language }}",
+    "type": "course"
+  },
+  {% endfor %}
+  {% assign currentId = 0 %}
+  {% assign entriesLength = site.data.blog.entries.size | divided_by: 2 %}
+  {% for entries in site.data.blog.entries %}
+    {% for entry in entries %}
+      {% if entry.title != nil %}
+
+        {% assign currentId = currentId | plus: 1 %}
+
+        {% assign tutor = site.data.tutors[entry.tutor] %}
+        {
+        "title": "{{ entry.title }}",
+        "tags": {{ entry.tags | jsonify }},
+        "url": "{{ entry.url }}",
+        "tutor": "{{ entry.tutor }}",
+        "tutorName": "{{ tutor.name }}",
+        "tutorProfile": "{{ tutor.pp }}",
+        "language": "{{ entry.language }}",
+        "type": "blog"
+        } {% if currentId <= entriesLength %}, {% endif %}
+
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+]

@@ -1,0 +1,27 @@
+---
+title: Explore
+subtitle: Explore the available courses in Learning
+layout: page
+---
+
+<script src="/js/custom/drawCourse.js"></script>
+
+<div class="col-md-9">
+  <div class="row" data-toggle="isotope" id="injectable">
+{% for post in site.posts reversed %}
+{% assign course = site.data.courses[post.course] %}
+{% assign tutor = course.tutor %}
+<!-- TODO: Stop injecting courses and use site.data.courses -->
+    <script id="delete">
+      var inj = document.getElementById("injectable")
+      inj.insertAdjacentHTML("beforeend", drawCourse("{{course.title}}",
+                                                           "{{course.description}}",
+                                                           "{{post.url}}",
+                                                           "{{course.thumb}}",
+                                                           "{{site.data.tutors[tutor].name}}",
+                                                           "{{site.data.tutors[tutor].pp}}"))
+      inj.removeChild(document.getElementById("delete"))
+    </script>
+{% endfor %}
+  </div>
+</div>

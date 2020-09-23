@@ -1,0 +1,191 @@
+{% include head.html %}
+
+{% assign course = site.data.courses[page.course] %}
+
+<div class="parallax bg-white page-section">
+  <div class="parallax-layer container" data-opacity="true">
+
+    <div class="media v-middle">
+      <div class="media-body">
+
+        <h1 class="text-display-1 margin-none">{{ course.title }}</h1>
+
+      </div>
+
+      <div class="media-right">
+        <a href="/explore" class="btn btn-white">Library</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-9 col-md-8">
+
+      <div class="page-section">
+        {{ content | markdownify }}
+
+        <p class="margin-none">
+          {% for tag in course.tags  %}
+          <span class="label label-grey-200">{{ tag }}</span>
+          {% endfor %}
+        </p>
+      </div>
+
+      <div class="page-section">
+
+        <div class="row">
+          <div class="col-md-7">
+            <h2 class="text-headline margin-none">What you will learn</h2>
+            <p class="text-subhead text-light">When you complete this course,
+            you will learn:</p>
+            <ul class="list-group relative paper-shadow">
+
+              {% for achievement in course.youlearn %}
+              <li class="list-group-item paper-shadow">
+                <div class="media v-middle">
+                  <div class="media-left">
+                    <div class="icon-block s30 bg-grey-500 text-white img-circle">
+                      <i class="fa fa-check"></i>
+                    </div>
+                  </div>
+                  <div class="media-body text-body-2">
+                    {{ achievement }}
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+
+            </ul>
+          </div>
+
+          <div class="col-md-5">
+            <h2 class="text-headline margin-none">Requirements</h2>
+            <p class="text-subhead text-light">Requirements to get the best
+            experience when passing through this course.</p>
+            <ul class="list-group relative paper-shadow">
+
+              {% for requirement in course.requirements %}
+              <li class="list-group-item paper-shadow">
+                <div class="media v-middle">
+                  <div class="media-left">
+                    <div class="icon-block s30 bg-indigo-300 text-white img-circle">
+                      <i class="fa fa-check"></i>
+                    </div>
+                  </div>
+                  <div class="media-body text-body-2">
+                    {{ requirement }}
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+
+          <div class="col-md-12" id="contents">
+            <h2 class="text-headline margin-none">Contents</h2>
+            <p class="text-subhead text-light">Contents of the course:</p>
+
+            <ul class="list-group relative paper-shadow">
+
+                {% for category in course.contents %}
+
+                <li class="list-group-item paper-shadow active">
+                  <div class="media v-middle">
+                    <div class="media-body text-body-2">
+                      {{ category.name }}
+                    </div>
+                  </div>
+                </li>
+
+                  {% for lesson in category.contents %}
+                  <li class="list-group-item paper-shadow">
+                    <div class="media v-middle">
+                      <div class="media-body text-body-2">
+                        <a href="{{ lesson.url }}">{{ lesson.name }}</a>
+                      </div>
+                    </div>
+                  </li>
+                  {% endfor %}
+                {% endfor %}
+
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-lg-3 col-md-4">
+
+      <div class="page-section">
+
+        <div class="panel panel-default paper-shadow" data-z="0.5"
+          data-hover-z="1" data-animated>
+          <div class="panel-heading">
+            <h4 class="text-headline">Course</h4>
+          </div>
+          <div class="panel-body">
+
+            <p class="text-caption">
+              <i class="fa fa-clock-o fa-fw"></i> {{ course.duration }} &nbsp;
+              <i class="fa fa-calendar fa fw"></i> {{ page.date |
+              date_to_long_string }}
+              <br>
+              <i class="fa fa-user fa-fw"></i> Tutor: {{
+              site.data.tutors[course.tutor].name }}
+            </p>
+
+          </div>
+
+          <hr class="margin-none">
+
+          <div class="panel-body text-center">
+            <p><a class="btn btn-success btn-lg paper-shadow relative"
+              href="#contents" data-z="1" data-hover-z="2"
+              data-animated>Contents</a></p>
+          </div>
+        </div>
+
+        <div class="panel panel-default paper-shadow" data-z="0.5"
+          data-hover-z="1" data-animated>
+          <div class="panel-body">
+
+            <div class="media v-middle">
+              <div class="media-left">
+                <img src="{{ site.data.tutors[course.tutor].pp }}" width="60"
+                class="img-circle">
+              </div>
+
+              <div class="media-body">
+                <!-- TODO: Tutors page -->
+                <h4 class="text-title margin-none"><a href="#">{{
+                    site.data.tutors[course.tutor].name }}</a></h4>
+                <span class="caption text-light">About the tutor.</span>
+              </div>
+            </div>
+            <div class="expandable expandable-indicator-white expandable-trigger">
+              <div class="expandable-content">
+                <p>{{ site.data.tutors[course.tutor].about }}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% include footer.html %}

@@ -1,0 +1,68 @@
+{% include head.html %}
+{% assign course = site.data.courses[page.course] %}
+
+<div class="parallax bg-white page-section third">
+  <div class="container parallax-layer" data-opacity="true">
+    <div class="media v-middle media-overflow-visible">
+      <div class="media-body">
+        <div class="text-headline">{{ course.title }}:  {{ page.section }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="page-section">
+    <div class="row">
+
+      <div class="col-md-9">
+
+        <div class="page-section padding-top-none">
+          <div class="media media-grid v-middle">
+            <div class="media-body">
+              <h1 class="text-display-1 margin-none">{{ page.title }}</h1>
+            </div>
+          </div>
+          <br>
+          {{ content }}
+          <br>
+          <!-- TODO: Previous and Next -->
+        </div>
+
+      </div>
+
+      <div class="col-md-3">
+
+        {% for section in course.contents %}
+        <div class="panel panel-default" data-toggle="panel-collapse" {% if
+          section.name == page.section %} data-open="true" {%endif %}>
+
+          <div class="panel-heading panel-collapse-trigger">
+            <h4 class="panel-title">{{ section.name }}</h4>
+          </div>
+
+          <div class="panel-body list-group">
+            <ul class="list-group list-group-menu">
+              {% for lesson in section.contents %}
+              <li class="list-group-item {% if lesson.name == page.title
+                    and section.name == page.section%}active{% endif %}">
+                <a href="{{ lesson.url }}" class="link-text-color">{{
+                  lesson.name }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        </div>
+        {% endfor %}
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+{% include footer.html %}

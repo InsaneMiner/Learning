@@ -1,0 +1,11 @@
+title: Learning
+description: >-
+  A completely free and open source eLearning platform coded in Jekyll
+author: Sarah
+copyDate: 2020
+version: v0.0.1-Beta
+
+permalink: /:title/
+markdown: kramdown
+
+sourceCode: https://github.com/HermadesCGCO/Learning

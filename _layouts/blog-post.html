@@ -1,0 +1,41 @@
+{% include head.html %}
+
+{% include blogParallax.html %}
+
+{% assign entry = site.data.blog.entries[page.entry] %}
+{% assign tutor = site.data.tutors[entry.tutor] %}
+
+<div class="container">
+  <div class="page-section">
+
+    <div class="row">
+      <div class="col-md-8 col-lg-9">
+
+        <div class="page-section padding-top-none">
+          <div class="s-container">
+            <h1 class="text-display-1 margin-top-none">{{ entry.title }}</h1>
+            <p class="text-light text-caption">
+              posted by
+              <a href="#">
+                <img src="{{ tutor.pp }}" class="img-circle width-20">
+                {{ tutor.name }}
+              </a>
+               | <i class="fa fa-clock-o fa-fw"></i> {{ entry.date }}
+            </p>
+          </div>
+
+          <br>
+
+          {{ page.content | markdownify }}
+        </div>
+
+      </div>
+
+      {% include blogSidebar.html %}
+
+    </div>
+
+  </div>
+</div>
+
+{% include footer.html %}
