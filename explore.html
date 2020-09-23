@@ -8,7 +8,7 @@ layout: page
 
 <div class="col-md-9">
   <div class="row" data-toggle="isotope" id="injectable">
-{% for post in site.posts reversed %}
+{% for post in site.posts %}
 {% assign course = site.data.courses[post.course] %}
 {% assign tutor = course.tutor %}
 <!-- TODO: Stop injecting courses and use site.data.courses -->
