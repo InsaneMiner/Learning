@@ -25,14 +25,14 @@
 
         {% assign tutor = site.data.tutors[entry.tutor] %}
         {
-        "title": "{{ entry.title }}",
-        "tags": {{ entry.tags | jsonify }},
-        "url": "{{ entry.url }}",
-        "tutor": "{{ entry.tutor }}",
-        "tutorName": "{{ tutor.name }}",
-        "tutorProfile": "{{ tutor.pp }}",
-        "language": "{{ entry.language }}",
-        "type": "blog"
+          "title": "{{ entry.title }}",
+          "tags": {{ entry.tags | jsonify }},
+          "url": "{{ entry.url }}",
+          "tutor": "{{ entry.tutor }}",
+          "tutorName": "{{ tutor.name }}",
+          "tutorProfile": "{{ tutor.pp }}",
+          "language": "{{ entry.language }}",
+          "type": "blog"
         } {% if currentId <= entriesLength %}, {% endif %}
 
       {% endif %}
