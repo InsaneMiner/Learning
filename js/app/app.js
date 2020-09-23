@@ -3466,15 +3466,15 @@ window.onload = loadScript;
 
 function initScripts() {
     var $scripts = [
-        "/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.js",
-        "/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.extensions.js",
-        "/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.services.js",
-        "/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.microdata.js",
-        "/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.microformat.js",
-        "/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.overlays.js",
-        "/js/vendor/maps/google/jquery-ui-map/ui/jquery.ui.map.rdfa.js",
-        "/js/vendor/maps/google/jquery-ui-map/addons/infobox_packed.js",
-        "/js/vendor/maps/google/jquery-ui-map/addons/markerclusterer.min.js"
+        "/js/libraries/maps/google/jquery-ui-map/ui/jquery.ui.map.js",
+        "/js/libraries/maps/google/jquery-ui-map/ui/jquery.ui.map.extensions.js",
+        "/js/libraries/maps/google/jquery-ui-map/ui/jquery.ui.map.services.js",
+        "/js/libraries/maps/google/jquery-ui-map/ui/jquery.ui.map.microdata.js",
+        "/js/libraries/maps/google/jquery-ui-map/ui/jquery.ui.map.microformat.js",
+        "/js/libraries/maps/google/jquery-ui-map/ui/jquery.ui.map.overlays.js",
+        "/js/libraries/maps/google/jquery-ui-map/ui/jquery.ui.map.rdfa.js",
+        "/js/libraries/maps/google/jquery-ui-map/addons/infobox_packed.js",
+        "/js/libraries/maps/google/jquery-ui-map/addons/markerclusterer.min.js"
     ];
 
     $.each($scripts, function (k, v) {
