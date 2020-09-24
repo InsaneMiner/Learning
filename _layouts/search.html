@@ -1,0 +1,104 @@
+{% include head.html %}
+
+<div class="parallax overflow-hidden page-section bg-primary">
+  <div class="container parallax-layer" data-opacity="true">
+    <div class="media media-grid v-middle">
+      <div class="media-left">
+        <div class="icon-block half text-white"><i class="fa fa-search"></i></div>
+      </div>
+      <div class="media-body">
+        <div class="text-display-2 text-white margin-none">Search</div>
+        <p>Displaying search results for: <span id="injectQuery"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-section">
+
+    <div class="row">
+      <div class="col-md-8 col-lg-9">
+        <h1>Courses</h1>
+        <div id="courses"></div>
+        <h1>Blog entries</h1>
+        <div id="entries"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% include footer.html %}
+<script src="/js/app/search.js"></script>
+<script>
+  var term = getQueryVariable("q")
+
+  $("#injectQuery").html(term)
+  returnSearchData(performSearch)
+
+  // TODO: Optimise this
+  function performSearch(json) {
+      var finalJSON = JSON.parse(json)
+
+      var titles = getObjects(finalJSON, "title", term)
+      var tags = getObjects(finalJSON, "tags", term)
+
+      var objects = [
+          ...titles,
+          ...tags
+      ]
+
+      // TODO: Search using tags too
+
+      for(var i = 0; i < objects.length; i++) {
+          if(objects[i].type === "blog") {
+              drawEntry(objects[i])
+              return
+          }
+          drawPost(objects[i])
+      }
+  }
+
+  function drawPost(post) {
+      var parent = document.querySelector("#courses")
+      draw(post, parent)
+  }
+
+  function drawEntry(entry) {
+      var parent = document.querySelector("#entries")
+      draw(entry, parent)
+  }
+
+  function draw(content, parent) {
+      var html = `
+<div class="media media-grid media-paper-shadow margin-top-none s-container">
+  <div class="media-left">
+   <div class="icon-block half img-circle bg-grey-300">
+    <i class="fa fa-search text-white"></i>
+   </div>
+  </div>
+
+  <div class="media-body">
+    <div class="panel panel-default paper-shadow" data-z="0.5">
+      <div class="panel-body">
+        <h4 class="text-title media-heading">
+          <a href="${content.url}" class="link-text-color">${content.title}</a>
+        </h4>
+        <p class="text-light text-caption">
+          <!-- TODO: Tutor page -->
+          posted by
+            <a href="#">
+              <img src="${content.tutorProfile}" class="img-circle width-20">
+              ${content.tutorName}
+            </a>
+        </p>
+        <p class="text-light">${content.description}</p>
+      </div>
+    </div>
+  </div>
+</div>
+      `
+      parent.insertAdjacentHTML("beforeend", html)
+  }
+</script>

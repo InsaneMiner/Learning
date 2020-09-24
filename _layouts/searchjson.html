@@ -3,9 +3,10 @@
   {% assign course = site.data.courses[post.course] %}
   {% assign tutor = site.data.tutors[course.tutor] %}
   {
-    "title": "{{ post.title }}",
-    "tags": {{ course.tags | jsonify }},
+    "title": "{{ course.title }}",
+    "tags": "{{ course.tags | join: ',' }}",
     "duration": "{{ course.duration }}",
+    "description": "{{ course.description }}",
     "url": "{{ post.url }}",
     "thumb": "{{ post.thumb }}",
     "tutor": "{{ course.tutor }}",
@@ -26,7 +27,8 @@
         {% assign tutor = site.data.tutors[entry.tutor] %}
         {
           "title": "{{ entry.title }}",
-          "tags": {{ entry.tags | jsonify }},
+          "tags": "{{ entry.tags | join: ',' }}",
+          "description": "{{ entry.description }}",
           "url": "{{ entry.url }}",
           "tutor": "{{ entry.tutor }}",
           "tutorName": "{{ tutor.name }}",
