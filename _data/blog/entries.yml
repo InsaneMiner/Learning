@@ -3,7 +3,7 @@ welcome-to-learning:
   description: A brief introduction into the Learning concept
   tutor: sarah
   date: 2020-09-22
-  url: /blog/welcome-to-learning
+  url: /blog/entry/welcome-to-learning
   tags:
     - Information
   language: english
@@ -14,7 +14,7 @@ hack-and-not-get-caught:
   description: Learn some anonymity techniques which will help you to remain as anonymous as possible when hacking
   tutor: sarah
   date: 2020-09-22
-  url: /blog/hack-and-not-get-caught
+  url: /blog/entry/hack-and-not-get-caught
   tags:
     - Hacking
     - Anonymity

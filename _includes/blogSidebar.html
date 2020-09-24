@@ -3,9 +3,11 @@
 
     <div class="panel-body">
       <div class="form-group form-control-material">
-        <input class="form-control" type="text" id="blogSearch"
-        placeholder="Type to search">
-        <label for="blohSearch">Search...</label>
+        <form action="/search" method="GET">
+          <input class="form-control" type="text" id="blogSearch"
+          placeholder="Type to search" name="q">
+          <label for="blohSearch">Search...</label>
+        </form>
       </div>
       <a href="#" class="btn btn-inverse paper-shadow relative" data-z="0.5"
         data-hover-z="1">Search</a>
@@ -20,9 +22,8 @@
     <ul class="list-group list-group-menu">
 
       {% for category in site.data.blog.categories %}
-      <!-- TODO: Sort entries through this tags menu -->
       <li class="list-group-item">
-        <a>
+        <a href="/blog/category/{{ category }}">
           <i class="fa fa-chevron-right fa-fw"></i> {{ category }}
         </a>
       </li>
