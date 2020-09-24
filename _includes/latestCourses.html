@@ -1,0 +1,52 @@
+<div class="page-section bg-white">
+  <div class="container">
+
+    <div class="text-center">
+      <h3 class="text-display-1">Latest courses</h3>
+        <p class="lead text-muted">Explore the latest added courses to Learning</p>
+    </div>
+
+    <div class="slick-basic slick-slider" data-items="4" data-items-lg="3"
+      data-items-md="2" data-items-sm="1" data-items-xs="1">
+        {% for post in site.posts %}
+        {% assign course = site.data.courses[post.course] %}
+        <div class="item">
+          <div class="panel panel-default paper-shadow" data-z="0.5"
+            data-hover-z="1" data-animated>
+
+            <div class="panel-body">
+              <div class="media media-clearfix-xs">
+                <div class="media-left">
+                  <div class="cover width-90 width-100pc-xs overlay cover-image-full hover">
+                    <img src="{{ course.thumb }}" class="img icon-block s90">
+
+                    <a href="{{ course.url }}" class="overlay overlay-full
+                      overlay-hover overlay-bg-white">
+                      <span class="v-center">
+                        <span class="btn btn-circle btn-white
+                                      btn-lg"><i class="fa fa-graduation-cap"></i></span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="media-body">
+                  <h4 class="media-heading margin-v-5-3">
+                    <a href="{{ course.url }}">{{ course.title }}</a>
+                  </h4>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="text-center">
+      <br>
+      <a href="/explore" class="btn btn-lg btn-primary">Browse courses</a>
+    </div>
+
+  </div>
+</div>
