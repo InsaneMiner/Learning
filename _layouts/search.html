@@ -49,8 +49,6 @@
           ...tags
       ]
 
-      // TODO: Search using tags too
-
       for(var i = 0; i < objects.length; i++) {
           if(objects[i].type === "blog") {
               drawEntry(objects[i])
@@ -86,9 +84,8 @@
           <a href="${content.url}" class="link-text-color">${content.title}</a>
         </h4>
         <p class="text-light text-caption">
-          <!-- TODO: Tutor page -->
           posted by
-            <a href="#">
+        <a href="/tutor/${content.tutor}">
               <img src="${content.tutorProfile}" class="img-circle width-20">
               ${content.tutorName}
             </a>

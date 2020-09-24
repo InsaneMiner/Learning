@@ -27,15 +27,13 @@ layout: pageParallax
           <div class="panel panel-default paper-shadow" data-z="0.5">
 
             <div class="panel-heading">
-              <!-- TODO: Instructor page -->
-              <h3 class="panel-title"><a href="#">{{ tutor.name }}</a></h3>
+              <h3 class="panel-title"><a href="/tutor/{{ course.tutor }}">{{ tutor.name }}</a></h3>
             </div>
 
             <div class="panel-body">
               <div class="media">
                 <div class="media-left">
-                  <!-- TODO: Instructor page -->
-                  <a href="#">
+                  <a href="/tutor/{{ course.tutor }}">
                     <img src="{{ tutor.pp }}" width="110" height="110">
                   </a>
                 </div>
@@ -67,8 +65,7 @@ layout: pageParallax
             </div>
 
             <div class="panel-footer text-right">
-              <!-- TODO: Instructor page -->
-              <a href="#" class="btn btn-sm btn-primary">View profile</a>
+              <a href="/tutor/{{ course.tutor }}" class="btn btn-sm btn-primary">View profile</a>
             </div>
 
           </div>

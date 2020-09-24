@@ -5,7 +5,7 @@ layout: page
 ---
 
 <div class="col-md-9">
-  <div class="row" data-toggle="isotope" id="injectable">
+  <div class="row" data-toggle="isotope">
 {% for post in site.posts %}
 {% assign course = site.data.courses[post.course] %}
 {% assign tutor = site.data.tutors[course.tutor] %}
@@ -38,8 +38,8 @@ layout: page
           <img class="img-circle width-40" src="{{ tutor.pp }}">
         </div>
         <div class="media-body">
-          <!-- TODO: Tutor page -->
-          <h4><a href="#">{{ tutor.name }}</a><br></h4> Instructor
+          <h4><a href="/tutor/{{ course.tutor }}">{{ tutor.name }}</a><br></h4>
+          Tutor
         </div>
       </div>
     </div>
