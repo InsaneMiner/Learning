@@ -10,4 +10,8 @@ baseurl: # URL of the site, i.e: learninglms.gq
 permalink: /:title/
 markdown: kramdown
 
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
 sourceCode: https://github.com/HermadesCGCO/Learning
