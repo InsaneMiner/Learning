@@ -1,1 +1,222 @@
-<!-- TODO: This -->
+---
+title: Contribute
+subtitle: Learn how you can help Learning to grow
+img: /images/tutors-parallax.jpg
+layout: pageParallax
+---
+
+<h1>Contribute to Learning</h1>
+
+<p>Hi!. The following is a guide to contribute with content and fixes to
+Learning. Thank you in advance.</p>
+
+<h2>Creating a new Course</h2>
+
+Creating a new course in Learning is so simple. There are a few things you have
+to take in account before doing it:
+
+<ol>
+  <li>Registering yourself as a tutor</li>
+  <li>Registering a new course</li>
+  <li>Creating a page for your course</li>
+  <li>Creating lessons</li>
+</ol>
+
+<h3>Registering yourself as a tutor</h3>
+
+<p>In order to register yourself as a tutor, you have to go to the file
+"`_data/tutors.yml`" and open it with your favourite text editor.</p>
+<p>At the very end of the file, copy and paste the following and modify the
+values as they are explained later:</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+<code>tutorId:
+  name: Tutor name
+  twitter: Your twitter  @
+  pp: your profile picture relative url
+  about: >-
+    A brief description about you
+  roles:
+    - Tell the world
+    - What are the things you are best at</code>
+    </pre>
+  </div>
+</div>
+
+<p>The values you'd have to modify are the following:</p>
+
+<ul>
+  <li>tutorId: An id which will be used throughout the website. When creating a
+  new course you won't pass your tutor username, but your tutor id. Note that
+  this <b>MUST</b> be unique. So, before creating yours, please search first in
+  the entire document if that ID hasn't been already registered.</li>
+  <li>name: The name which will be publicly available. This will be the one
+    that will appear in the courses' about the tutor section, the blog entries,
+  etcetera.</li>
+  <li>twitter: Your twitter's @ (without the "@" symbol)</li>
+  <li>pp: Your profile picture's relative url. First upload the image to
+    "/images/tutorIcons/" and use that URL</li>
+  <li>about: A description about you, note that using the ">-" will make that
+    field multiline until a new variable "name:" is found</li>
+  <li>roles: Your roles, the things you are good at, for example, programming,
+    hacking, video editing, etcetera. Please use only two and single-worded
+    roles.</li>
+</ul>
+
+<h3>Registering a new course</h3>
+
+<p>Once you already have a tutor ID, it's time to register your course. The
+following are the steps to follow in order to create a course:</p>
+
+<ul>
+  <li>Create a new file at "data/courses" whose name will be the course id,
+    note that this <b>MUST</b> be unique and it'll be used throughout this
+    website.</li>
+  <li>Copy and paste the following template:</li>
+  <div class="language-plaintext highlighter-rouge">
+    <div class="highlight">
+      <pre class="highlight">
+<code>title: Course title
+description: Tell the world what are they going to learn in this course (short
+description only)
+thumb: relative url to the thumbnail
+url: /Permalink-URL/
+tags:
+  - Beginners
+  - Course
+  - Video Editing
+  - Kdenlive
+youlearn:
+  - The very basics of video editing
+  - Manipulate transitions as a master
+requirements:
+  - A linux distribution
+contents:
+  - name: Getting started
+    desc: Getting started with the Kdenlive interface
+    contents:
+      - name: Introduction
+        url: /lessons/course_id/Introduction/lesson-name
+duration: 20hrs
+tutor: sarah
+language: english</code>
+      </pre>
+    </div>
+  </div>
+</ul>
+
+<p>You have to modify the following:</p>
+
+<ul>
+  <li>title: The public name of the course, for example: "The basics of
+    Kdenlive"</li>
+  <li>description: A short description about the course, the one that appears in
+  the "Explore" section</li>
+  <li>thumb: Relative url for the course thumbnail</li>
+  <li>url: The url of the course main page (overview)</li>
+  <li>tags: A list containing the tags of the course</li>
+  <li>youlearn: The list of things that will appear in the "What you will learn"
+  section of a course overview page</li>
+  <li>requirements: The list of things that will appear in the "Requirements"
+    section of a course overview page</li>
+  <li>contents: A list of lists. The first list (the one following after
+    "contents:") will be a section. The "contents:" list will be the lessons of
+  that section. Consider the following example</li>
+  <div class="language-plaintext highlighter-rouge">
+    <div class="highlight">
+      <pre class="highlight">
+<code>contents:
+  - name: Getting started
+    desc: Getting started with the Kdenlive concept
+    contents:
+      - name: GUI
+        url: /lessons/course_id/Introduction/lesson-name
+      - name: Concepts
+        url: /lessons/course_id/Introduction/lesson-name
+  - name: Transitions
+    desc: Create your first transition
+    contents:
+      - name: Creating transitions
+        url: /lessons/course_id/Introduction/lesson-name
+      - name: Modifying a transition value
+        url: /lessons/course_id/Introduction/lesson-name</code>
+      </pre>
+    </div>
+  </div>
+</ul>
+
+<h3>Creating a page for your course</h3>
+
+<p>Once you've registered your course, it won't be visible as it is not properly
+created, you have registered all of the data of your course, but... That data is
+not used anywhere. Create a markdown file (extension ".md") in the "_posts/"
+directory, the file name should follow this schema:
+"YEAR-MONTH-DAY-Post-Name.md" don't overthink the "Post-Name" as it won't be
+really important. The name should look like this:
+"2020-09-24-Introduction-kdenlive.md".</p>
+<p>The following code <b>MUST</b> be at the beginning of the file:</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+<code>---
+course: course_id
+layout: course
+---</code>
+    </pre>
+  </div>
+</div>
+
+<p>You must modify the following values:</p>
+<ul>
+  <li>course: The course id you registered previously at "_data/courses/"</li>
+</ul>
+
+<p>After these three lines, you can add content to your course normally. When
+talking about "content" I mean a larger description about your course.</p>
+<p>Once all of those steps are completed, you can now go on to creating lessons.</p>
+
+<h3>Creating lessons</h3>
+
+<p>When you have registered your course and added it to the page. Now it's time
+to add content to it. There is a directory at the Learning root folder called
+"lessons" there you have to create a new directory, which name will be the
+course ID those lessons belong to. Then, for each section in the course, you'll
+have to create a new folder with its name (or a shorter if that name contains
+spaces or many words together), this is not really important, but it helps
+Learning to keep organised. Now, create a new file with the lesson name (or a
+shorter name if it contains many spaces or several words), for example:</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+<code>/lessons/intro_kdenlive/Introduction/intro-to-kdenlive.md</code>
+    </pre>
+  </div>
+</div>
+
+<p>Every lesson <b>MUST</b> have at its beginning the following lines:</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+<code>---
+title: Introduction to Kdenlive
+course: intro_kdenlive
+section: "Introduction"
+layout: lesson
+---</code>
+    </pre>
+  </div>
+</div>
+
+<p>The values you'll have to modify are the following:</p>
+
+<ul>
+  <li>title: The name of the lesson (it <b>MUST</b> be the same you registered
+    at "_data/courses/course_id.yml")</li>
+  <li>course: The course_id you created before</li>
+  <li>section: The section that lesson you are creating belongs to</li>
+</ul>
