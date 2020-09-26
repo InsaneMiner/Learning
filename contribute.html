@@ -17,6 +17,7 @@ to take in account before doing it:
 
 <ol>
   <li>Registering yourself as a tutor</li>
+  <li>Register your course category</li>
   <li>Registering a new course</li>
   <li>Creating a page for your course</li>
   <li>Creating lessons</li>
@@ -65,6 +66,56 @@ values as they are explained later:</p>
     roles.</li>
 </ul>
 
+<h3>Register your course category</h3>
+
+<p>Go to the file "_data/courses/categories.yml" and see if the category of the
+course you will create already exists, for example: "Video Editing". If not, add
+the following lines at the end of the file:</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+<code> category:
+  name: Video Editing
+  slug: video-editing
+  description: Learn to edit videos</code>
+    </pre>
+  </div>
+</div>
+
+<p>You'll need to modify:</p>
+
+<ul>
+  <li>category: The same as slug</li>
+  <li>name: The name of the category.</li>
+  <li>slug: The name of the category without spaces, for example,
+    "game-development"</li>
+  <li>description: A brief description about the category</li>
+</ul>
+
+<p>If you had to register the category, go to "category/" and create a new file
+called "slug.md", replacing "`slug`" with the slug you put in the yml file. To
+the "md" file add the following:</p>
+
+<div class="language-plaintext highlighter-rouge">
+  <div class="highlight">
+    <pre class="highlight">
+<code>---
+title: Video editing
+category: video-editing
+layout: category
+---</code>
+    </pre>
+  </div>
+</div>
+
+<p>You'd need to modify:</p>
+
+<ul>
+  <li>title: The name of the category you registered in the ".yml" file</li>
+  <li>category: The slug you registered in the ".yml" file</li>
+</ul>
+
 <h3>Registering a new course</h3>
 
 <p>Once you already have a tutor ID, it's time to register your course. The
@@ -101,7 +152,8 @@ contents:
         url: /lessons/course_id/Introduction/lesson-name
 duration: 20hrs
 tutor: sarah
-language: english</code>
+language: english
+category: video-editing</code>
       </pre>
     </div>
   </div>
@@ -145,6 +197,9 @@ language: english</code>
       </pre>
     </div>
   </div>
+  <li>duration: The duration of the course (add "hrs" at the end)</li>
+  <li>language: The language of the course, for example, english or spanish</li>
+  <li>category: Category slug</li>
 </ul>
 
 <h3>Creating a page for your course</h3>
