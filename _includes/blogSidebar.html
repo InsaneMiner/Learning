@@ -1,19 +1,6 @@
 <div class="col-md-4 col-lg-3">
-  <div class="panel panel-default">
 
-    <div class="panel-body">
-      <div class="form-group form-control-material">
-        <form action="/search" method="GET">
-          <input class="form-control" type="text" id="blogSearch"
-          placeholder="Type to search" name="q">
-          <label for="blohSearch">Search...</label>
-        </form>
-      </div>
-      <a href="#" class="btn btn-inverse paper-shadow relative" data-z="0.5"
-        data-hover-z="1">Search</a>
-    </div>
-
-  </div>
+  {% include sidebar.search.html %}
 
   <div class="panel panel-default">
     <div class="panel-heading">
