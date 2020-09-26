@@ -1,6 +1,7 @@
 ---
 entry: hack-and-not-get-caught
 title: How to hack and not to get caught
+comments: true
 layout: blog-post
 ---
 

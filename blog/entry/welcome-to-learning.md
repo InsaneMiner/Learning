@@ -1,6 +1,7 @@
 ---
 entry: welcome-to-learning
 title: Welcome to learning!
+comments: true
 layout: blog-post
 ---
 

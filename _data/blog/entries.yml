@@ -8,6 +8,7 @@ welcome-to-learning:
     - Information
   language: english
   category: Information
+  uid: welcome-to-learning
 
 hack-and-not-get-caught:
   title: How to hack and not to get caught
@@ -20,3 +21,4 @@ hack-and-not-get-caught:
     - Anonymity
   language: english
   category: Hacking
+  uid: hack-and-not-get-caught

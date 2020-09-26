@@ -27,7 +27,19 @@
           <br>
 
           {{ page.content | markdownify }}
+          <br>
+          <span class="label bg-gray-dark">{{ entry.category }}</span>
+          {% for tag in entry.tags %}
+          <span class="label bg-grey-300">{{ tag }}</span>
+          {% endfor %}
         </div>
+
+        <h5 class="text-subhead-2 text-light">Comments</h5>
+        {% if page.comments %}
+          {% include disqus.html entry = entry %}
+        {% else %}
+        <h5>Comments not supported on this entry</h5>
+        {% endif %}
 
       </div>
 
