@@ -1,0 +1,118 @@
+{% include head.html %}
+{% assign course = site.data.courses[page.course] %}
+{% assign quiz = site.data.quizzes[page.course][page.quiz] %}
+
+<div class="page-section half bg-white">
+  <div class="container">
+    <div class="section-toolbar">
+      <div class="cell">
+        <div class="media width-120 v-middle margin-none">
+          <div class="media-left">
+            <div class="icon-block bg-grey-200 s30"><i class="fa fa-question"></i></div>
+          </div>
+          <div class="media-body">
+            <p class="text-body-2 text-light margin-none">Questions</p>
+            <p class="text-title text-primary margin-none">{{
+            quiz.questions.size }}</p>
+          </div>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="media width-120 v-middle margin-none">
+          <div class="media-left">
+            <div class="icon-block bg-grey-200 s30"><i class="fa fa-diamond"></i></div>
+          </div>
+          <div class="media-body">
+            <p class="text-body-2 text-light margin-none">Score</p>
+            <p class="text-title text-success margin-none" id="pts">0 pt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="page-section">
+    <div class="row">
+
+      <div class="col-md-9">
+
+        <form action="{{ page.url }}" method="GET">
+          {% assign id=1 %}
+          {% for question in quiz.questions %}
+            <div class="text-subhead-2 text-light">Question {{ forloop.index }} of
+              {{ quiz.questions.size }}</div>
+            <div class="panel panel-default paper-shadow" data-z="0.5">
+
+              <div class="panel-heading">
+                <h4 class="text-headline">{{ question.title }}</h4>
+              </div>
+
+              <div class="panel-body">
+                <p>{{ question.description }}</p>
+              </div>
+
+            </div>
+
+            <div class="text-subhead-2 text-light">Your answer</div>
+            <div class="panel panel-default paper-shadow" data-z="0.5">
+              <div class="panel-body">
+
+                {% assign questionNo=forloop.index %}
+
+                {% for option in question.options %}
+                  <div class="form-group">
+                    <input id="checkbox{{ id }}" type="checkbox" name="question{{
+                            questionNo }}" value="{{ option }}">
+                    <label for="checkbox{{ id }}">{{ option }}</label>
+                  </div>
+                {% endfor %}
+
+              </div>
+
+              {% if forloop.index == quiz.questions.size %}
+                <div class="panel-footer">
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-success" name="submit"><i class="fa
+                          fa-fw fa-save"></i> Submit</button>
+                  </div>
+                </div>
+              {% endif %}
+
+            </div>
+          {% endfor %}
+
+        </form>
+
+      </div>
+
+      {% include lesson.courseContents.html %}
+
+    </div>
+  </div>
+
+</div>
+
+<script src="/js/app/search.js"></script>
+<script>
+  if(getQueryVariable("submit") !== undefined) {
+      var points = 0
+      var pts = document.getElementById("pts")
+
+      {% for question in quiz.questions %}
+        var question{{ forloop.index }} = getQueryVariable("question{{ forloop.index }}");
+        if(question{{ forloop.index }} !== undefined) {
+            var correct{{ forloop.index }} = "{{ question.correctAnswer }}"
+            if (question{{ forloop.index }} == correct{{ forloop.index }}) {
+                points += 100;
+            }
+        }
+      {% endfor %}
+
+      pts.innerHTML = points + "pt"
+  }
+</script>
+
+{% include footer.html %}

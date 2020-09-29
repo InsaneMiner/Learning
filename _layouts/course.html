@@ -106,14 +106,21 @@
                 </li>
 
                   {% for lesson in category.contents %}
-                  <li class="list-group-item paper-shadow">
-                    <div class="media v-middle">
-                      <div class="media-body text-body-2">
-                        <a href="{{ lesson.url }}">{{ lesson.name }}</a>
+                    <li class="list-group-item paper-shadow">
+                      <div class="media v-middle">
+                        <div class="media-body text-body-2">
+
+                          {% if lesson.type == "quiz" %}
+                            <a href="{{ lesson.url }}">Quiz: {{ lesson.name }}</a>
+                          {% else %}
+                            <a href="{{ lesson.url }}">{{ lesson.name }}</a>
+                          {% endif %}
+
+                        </div>
                       </div>
-                    </div>
-                  </li>
+                    </li>
                   {% endfor %}
+
                 {% endfor %}
 
             </ul>
