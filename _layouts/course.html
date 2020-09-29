@@ -93,37 +93,83 @@
             <h2 class="text-headline margin-none">Contents</h2>
             <p class="text-subhead text-light">Contents of the course:</p>
 
-            <ul class="list-group relative paper-shadow">
+            {% for category in course.contents %}
+              <div class="panel panel-default curriculum {% if forloop.index == 1 %}open{% endif %} paper-shadow"
+                data-z="0.5">
 
-                {% for category in course.contents %}
+                <div class="panel-heading panel-heading-gray"
+                     data-toggle="collapse" data-target="#content-{{
+                     forloop.index }}">
 
-                <li class="list-group-item paper-shadow active">
-                  <div class="media v-middle">
-                    <div class="media-body text-body-2">
-                      {{ category.name }}
+                  <div class="media">
+                    <div class="media-left">
+                      <span class="icon-block img-circle bg-indigo-300 half text-white">
+                        <i class="fa fa-graduation-cap"></i>
+                      </span>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="text-headline">{{ category.name }}</h4>
+                      <p>{{ category.description }}</p>
                     </div>
                   </div>
-                </li>
 
+                  <span class="collapse-status collapse-open">Open</span>
+                  <span class="collapse-status collapse-close">Close</span>
+
+                </div>
+
+                <div class="list-group collapse {% if forloop.index == 1 %}in{%
+                  endif %}" id="content-{{ forloop.index }}">
                   {% for lesson in category.contents %}
-                    <li class="list-group-item paper-shadow">
-                      <div class="media v-middle">
-                        <div class="media-body text-body-2">
-
-                          {% if lesson.type == "quiz" %}
-                            <a href="{{ lesson.url }}">Quiz: {{ lesson.name }}</a>
-                          {% else %}
-                            <a href="{{ lesson.url }}">{{ lesson.name }}</a>
-                          {% endif %}
-
-                        </div>
+                    <div class="list-group-item media" data-target="{{ lesson.url }}">
+                      <div class="media-left">
+                        {{ forloop.index }}.
                       </div>
-                    </li>
+                      <div class="media-body">
+                        <i class="fa fa-fw fa-circle text-grey-200"></i> {{
+                        lesson.name }}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+
+              </div>
+            {% endfor %}
+
+            <!--
+              <ul class="list-group relative paper-shadow">
+
+                  {% for category in course.contents %}
+
+                  <li class="list-group-item paper-shadow active">
+                    <div class="media v-middle">
+                      <div class="media-body text-body-2">
+                        {{ category.name }}
+                      </div>
+                    </div>
+                  </li>
+
+                    {% for lesson in category.contents %}
+                      <li class="list-group-item paper-shadow">
+                        <div class="media v-middle">
+                          <div class="media-body text-body-2">
+
+                            {% if lesson.type == "quiz" %}
+                              <a href="{{ lesson.url }}">Quiz: {{ lesson.name }}</a>
+                            {% else %}
+                              <a href="{{ lesson.url }}">{{ lesson.name }}</a>
+                            {% endif %}
+
+                          </div>
+                        </div>
+                      </li>
+                    {% endfor %}
+
                   {% endfor %}
 
-                {% endfor %}
 
-            </ul>
+              </ul>
+            -->
           </div>
         </div>
 
