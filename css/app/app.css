@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=RobotoDraft:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en');
-@import url('./monokai.css')
+@import url('./monokai.css');
+
 body.login {
   position: initial;
   background: #f5f5f5;

@@ -8,11 +8,13 @@ version: v0.0.1-Beta
 baseurl: # URL of the site, i.e: learninglms.gq
 pageurl: https://learninglms.gq
 
-permalink: /:title/
 markdown: kramdown
+highlighter: rouge
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
+
+permalink: /:title/
 
 sourceCode: https://github.com/HermadesCGCO/Learning
