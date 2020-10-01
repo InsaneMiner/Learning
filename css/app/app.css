@@ -48558,3 +48558,7 @@ fieldset[disabled] .owl-preview .owl-controls .owl-nav > div {
 .media-clearfix-xs-min > .media-body [class*="media"] .media-object {
   width: 50px !important;
 }
+
+.img-fluid {
+  max-width: 100%;
+}

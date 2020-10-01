@@ -14,6 +14,11 @@ requirements:
 contents:
   - name: Introduction
     description: Getting started with the C language
+    contents:
+      - name: Introduction
+        url: /lessons/c_beginners/Intro/introduction
+      - name: Getting started
+        url: /lessons/c_beginners/Intro/getting-started
 duration: 20hrs
 tutor: sarah
 language: english
