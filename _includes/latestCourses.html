@@ -34,6 +34,13 @@
                   <h4 class="media-heading margin-v-5-3">
                     <a href="{{ course.url }}">{{ course.title }}</a>
                   </h4>
+                  <p class="small margin-none">
+                    {% if course.completed == 1 %}
+                      This course is complete
+                    {% else %}
+                      This course is still in development
+                    {% endif %}
+                  </p>
                 </div>
               </div>
             </div>

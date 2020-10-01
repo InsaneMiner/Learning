@@ -1,0 +1,21 @@
+title: C for beginners
+description: Learn the C programming language from scratch
+thumb: /images/courses/c-beginners.jpg
+url: /C-Beginners/
+tags:
+  - Programming
+  - Beginners
+youlearn:
+  - The C programming language
+  - Programming logic
+  - Structures, pointers, functions, conditionals and loops
+requirements:
+  - Not required, but recommendable a linux-based distribution
+contents:
+  - name: Introduction
+    description: Getting started with the C language
+duration: 20hrs
+tutor: sarah
+language: english
+category: programming
+completed: 0

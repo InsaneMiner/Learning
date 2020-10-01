@@ -22,3 +22,16 @@ hack-and-not-get-caught:
   language: english
   category: Hacking
   uid: hack-and-not-get-caught
+
+first-three-courses:
+  title: The first three courses of Learning
+  description: A brief talk about the content of Learning
+  tutor: sarah
+  date: 2020-10-01
+  url: /blog/entry/first-three-courses
+  tags:
+    - Information
+    - Just chatting
+  language: english
+  category: Information
+  uid: first-three-courses

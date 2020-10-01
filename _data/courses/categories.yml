@@ -2,3 +2,7 @@ hacking:
   name: Hacking
   slug: hacking
   description: Pentesting, password cracking, malware programming and many more
+programming:
+  name: Programming
+  slug: programming
+  description: Learn to code
