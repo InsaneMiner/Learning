@@ -16,15 +16,16 @@
     "type": "course"
   },
   {% endfor %}
+  {% assign entriesLength = site.data.blog.entries.size | dividedby: 2 %}
   {% assign currentId = 0 %}
-  {% assign entriesLength = site.data.blog.entries.size | divided_by: 2 %}
   {% for entries in site.data.blog.entries %}
     {% for entry in entries %}
       {% if entry.title != nil %}
 
+        {% assign tutor = site.data.tutors[entry.tutor] %}
+
         {% assign currentId = currentId | plus: 1 %}
 
-        {% assign tutor = site.data.tutors[entry.tutor] %}
         {
           "title": "{{ entry.title }}",
           "tags": "{{ entry.tags | join: ',' }}",
@@ -35,7 +36,7 @@
           "tutorProfile": "{{ tutor.pp }}",
           "language": "{{ entry.language }}",
           "type": "blog"
-        } {% if currentId <= entriesLength %}, {% endif %}
+        } {% if currentId < entriesLength %}, {% endif %}
 
       {% endif %}
     {% endfor %}
