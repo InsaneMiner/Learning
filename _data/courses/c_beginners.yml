@@ -20,7 +20,7 @@ contents:
       - name: Getting started
         url: /lessons/c_beginners/Intro/getting-started
       - name: The first C program
-        url: /lesson/c_beginners/Intro/c-program
+        url: /lessons/c_beginners/Intro/c-program
 duration: 20hrs
 tutor: sarah
 language: english
