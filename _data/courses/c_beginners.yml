@@ -21,6 +21,8 @@ contents:
         url: /lessons/c_beginners/Intro/getting-started
       - name: The first C program
         url: /lessons/c_beginners/Intro/c-program
+      - name: Compilation and Execution
+        url: /lessons/c_beginners/Intro/compilation
 duration: 20hrs
 tutor: sarah
 language: english
