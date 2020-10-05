@@ -23,6 +23,10 @@ contents:
         url: /lessons/c_beginners/Intro/c-program
       - name: Compilation and Execution
         url: /lessons/c_beginners/Intro/compilation
+      - name: Receiving input
+        url: /lessons/c_beginners/Intro/input
+      - name: Instructions
+        url: /lessons/c_beginners/Intro/instructions
 duration: 20hrs
 tutor: sarah
 language: english
