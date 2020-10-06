@@ -22,4 +22,16 @@ layout: null
       {% endfor %}
     {% endfor %}
   {% endfor %}
+  {% for entries in site.data.blog.entries %}
+    {% for entry in entries %}
+      {% if entry.title != nil %}
+        <url>
+          <loc>{{ entry.url | prepend: site.baseurl | prepend: site.url }}</loc>
+          <changefreq>weekly</changefreq>
+          <priority>0.8</priority>
+          <lastmod>{{ entry.date | date: "%Y-%m-%d" }}</lastmod>
+        </url>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
 </urlset>
