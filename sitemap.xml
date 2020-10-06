@@ -6,7 +6,7 @@ layout: null
   {% for post in site.posts %}
     {% assign course = site.data.courses[post.course] %}
     <url>
-      <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
+      <loc>{{ post.url | prepend: site.baseurl | prepend: site.pageurl }}</loc>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
       <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
@@ -14,7 +14,7 @@ layout: null
     {% for section in course.contents %}
       {% for lesson in section.contents %}
         <url>
-          <loc>{{ lesson.url | prepend: site.baseurl | prepend: site.url }}</loc>
+          <loc>{{ lesson.url | prepend: site.baseurl | prepend: site.pageurl }}</loc>
           <changefreq>weekly</changefreq>
           <priority>0.8</priority>
           <lastmod>{{ post.date | date: "%Y-%m-%d" }}</lastmod>
@@ -26,7 +26,7 @@ layout: null
     {% for entry in entries %}
       {% if entry.title != nil %}
         <url>
-          <loc>{{ entry.url | prepend: site.baseurl | prepend: site.url }}</loc>
+          <loc>{{ entry.url | prepend: site.baseurl | prepend: site.pageurl }}</loc>
           <changefreq>weekly</changefreq>
           <priority>0.8</priority>
           <lastmod>{{ entry.date | date: "%Y-%m-%d" }}</lastmod>
