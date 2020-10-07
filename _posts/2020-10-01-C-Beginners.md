@@ -1,5 +1,6 @@
 ---
 course: c_beginners
+tags: Programming, Course, C, C++
 layout: course
 ---
 
