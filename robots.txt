@@ -1,3 +1,5 @@
 # robotstxt.org/
 
 User-agent: *
+Allow: /
+Sitemap: https://learninglms.gq/sitemap.xml
