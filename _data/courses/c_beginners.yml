@@ -7,10 +7,15 @@ tags:
   - Beginners
 youlearn:
   - The C programming language
+  - C Programming structure
   - Programming logic
   - Structures, pointers, functions, conditionals and loops
+  - Program creation in C
+  - Using C for cross-platform development
 requirements:
   - Not required, but recommendable a linux-based distribution
+  - Text editor
+  - C compiler (GCC or MinGW for example)
 contents:
   - name: Introduction
     description: Getting started with the C language
