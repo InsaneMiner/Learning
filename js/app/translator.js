@@ -4,4 +4,10 @@ $(document).ready(function() {
       v.className = "img-fluid"
     }
   })
+
+  $("table").each((i, v) => {
+    if(v.className !== "table") {
+      v.className = "table"
+    }
+  })
 })
