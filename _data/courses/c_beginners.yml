@@ -36,6 +36,15 @@ contents:
         url: /lessons/c_beginners/Intro/conversions
       - name: Hierarchy of Operations
         url: /lessons/c_beginners/Intro/hierarchy
+      - name: Associativity of Operators
+        url: /lessons/c_beginners/Intro/associativity
+      - name: Control Instructions in C
+        url: /lessons/c_beginners/Intro/control
+  - name: The Decision Control Structure
+    description: Let's learn about those instructions that lets the computer to take different decisions
+    contents:
+      - name: The Decision Control Structure
+        url: /lessons/c_beginners/Control/control
 duration: 20hrs
 tutor: sarah
 language: english
