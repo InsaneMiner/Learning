@@ -14,7 +14,7 @@ results.
 I have a lot of new and amazing stuff planned to do with Learning, and this is
 the first step to perform all of those things. The old template has a plethora
 of errors, it wasn't as responsible as it shall be and it looked kind of
-outdated. I hope you like this new design!. I will post a few pictures of the
+outdated. I hope you like this new design (it took me 9 hours to do btw)!. I will post a few pictures of the
 old learning compared with the new one.
 
 Home page
