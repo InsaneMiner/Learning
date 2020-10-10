@@ -68,4 +68,4 @@ C. But our knowledge would be incomplete, unless we know how to convert a
 general arithmetic statement to a C statement. C can handle any complex
 expression with ease. Some examples will be shown in the following image:
 
-![Algebric expressions ported to C](/images/courses/c_beginners/c_algebraic.png)
+![Algebric expressions ported to C](/img/courses/c_beginners/c_algebraic.png)

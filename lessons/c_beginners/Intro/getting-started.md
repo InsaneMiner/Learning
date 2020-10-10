@@ -18,7 +18,7 @@ how using them to construct constants, variables and keywords, finally, how
 these are combinated to form an instruction. A group of instructions would be
 combined later on to form a program.
 
-![](/images/courses/c_beginners/c_learning_analogy.png)
+![](/img/courses/c_beginners/c_learning_analogy.png)
 
 ## The C Character set
 
@@ -26,7 +26,7 @@ A character denotes any alphabet, digit or special symbol used to represent
 information. The following image shows the valid alphabets, numbers and special
 symbols allowed in C.
 
-![](/images/courses/c_beginners/c_alphabet.png)
+![](/img/courses/c_beginners/c_alphabet.png)
 
 ## Constants, Variables and Keywords
 
@@ -48,7 +48,7 @@ are assigning a new value 5 to the same memory location **x**. This would
 overwrite the earlier value 3, since a memory location can hold only one value
 at a time.
 
-![](/images/courses/c_beginners/x_memory.png)
+![](/img/courses/c_beginners/x_memory.png)
 
 Since the location whose name is **x** can hold different values at different
 times, **x** is known as a variable. As against this, 3 or 5 do not change,
@@ -63,7 +63,7 @@ C constants can be divided into two major categories:
 
 These are further categorised in the following image:
 
-![](/images/courses/c_beginners/constants_classification.png)
+![](/img/courses/c_beginners/constants_classification.png)
 
 At this stage, we will restrict our discussion to only Primary Constants,
 namely, Integer, Real and character constants. Let's see the details of rach of
@@ -220,7 +220,7 @@ There are only 32 keywords available in C. The following image gives a list of
 these keywords for your ready reference. A detailed discussion of each of these
 keywords would be taken up in later sections wherever their use relevant.
 
-![](/images/courses/c_beginners/c_keywords.png)
+![](/img/courses/c_beginners/c_keywords.png)
 
 Note that compiler vendors (like Microsoft, Borland, etc) provide their own
 keywords apart from the ones mentioned aboved. These include extended keywords
