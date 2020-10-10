@@ -1,0 +1,8 @@
+tab: General
+questions:
+  - question: Is Learning actually free?
+    answer: Yes. Learning is and will be completely free forever. You can access to all its content (even the source code) without paying or hidden fees.
+  - question: Are you storing my info and selling it to companies?
+    answer: Nope. The only way we 'could' store your info is by our Google Analytics tracking code (which I use only to see the traffic of the website). The only way Learning could earn money if through <a href="/donate/">Donations</a>
+  - question: Why is Learning free?
+    answer: Because when I started to code and to hack, I would liked to have a website whose content was free (and obviously good) so I decided to start this so I can help other people who is starting or want to learn new stuff
