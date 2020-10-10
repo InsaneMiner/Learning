@@ -38,3 +38,17 @@ first-three-courses:
   category: Information
   uid: first-three-courses
   thumb: /img/blog/first-three-courses.png
+
+redesign-learning:
+  title: Learning is redesigned
+  description: A brief talk about the changes made to Learning
+  tutor: sarah
+  date: 2020-10-10
+  url: /blog/entry/redesign-learning
+  tags:
+    - Information
+    - Just chatting
+  language: english
+  category: Information
+  uid: redesign-learning
+  thumb: /img/blog/old-learning.png
