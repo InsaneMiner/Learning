@@ -1,0 +1,87 @@
+<section class="gray-bg">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <div class="sec-heading center">
+          <p>Popular courses</p>
+          <h2><span class="theme-cl">Featured</span> Courses</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      {% for post in site.posts %}
+        {% assign course = site.data.courses[post.course] %}
+        {% if course.featured == 1 %}
+          {% assign tutor = site.data.tutors[course.tutor] %}
+          <div class="col-xl-6 col-lg-12 col-sm-12">
+            <div class="education_block_list_layout">
+
+              <div class="education_block_thumb n-shadow">
+                <a href="{{ course.url }}">
+                  <img src="{{ course.thumb }}" class="img-fluid">
+                </a>
+              </div>
+
+              <div class="list_layout_ecucation_caption">
+
+                <div class="education_block_body">
+                  <h4 class="bl-title">
+                    <a href="{{ course.url }}">{{ course.title }}</a>
+                  </h4>
+
+                  <div class="course_rate_system">
+                    <div class="course_reviews_info">
+                      <strong class="{% if course.completed == 1 %}high{% else
+                        %}mid{% endif %}">{% if course.completed == 1
+                        %}Completed{% else %}Incomplete{% endif %}</strong>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="education_block_footer mt-3">
+                  <div class="education_block_author">
+
+                    <div class="path-img">
+                      <a href="/tutor/{{ course.tutor }}">
+                        <img src="{{ tutor.pp }}" class="img-fluid">
+                      </a>
+                    </div>
+                    <h5><a href="/tutor/{{ course.tutor }}">{{ tutor.name }}</a></h5>
+
+                  </div>
+
+                  <div class="cources_info_style3">
+                    <ul>
+                      <li>
+                        <div class="foot_lecture">
+                          {% assign lessons = 0 %}
+
+                          {% for contents in course.contents %}
+                            {% for lesson in contents.contents %}
+                              {% assign lessons = lessons | plus: 1 %}
+                            {% endfor %}
+                          {% endfor %}
+
+                          <i class="ti-control-skip-forward mr-2"></i>{{ lessons }} lessons
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>

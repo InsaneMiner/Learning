@@ -1,0 +1,76 @@
+<section class="pt-0">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-6 col-sm-12">
+        <div class="sec-heading center">
+
+          <p>Popular instructors</p>
+          <h2><span class="theme-cl">Popular & Featured</span> Instructors in
+            Learning</h2>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <div class="four_slide-dots articles arrow_middle">
+
+          {% for tutors in site.data.tutors %}
+            {% for tutor in tutors %}
+              {% if tutor.id != nil %}
+                <div class="singles_items">
+                  <div class="instructor_wrap mid">
+                    <div class="instructor_thumb">
+                      <a href="/tutor/{{ tutor.id }}">
+                        <img src="{{ tutor.pp }}" class="img-fluid">
+                      </a>
+                    </div>
+                    <div class="instructor_caption">
+                      <h4><a href="/tutor/{{ tutor.id }}">{{ tutor.name }}</a></h4>
+                      <span class="skills-min">{{ tutor.mainRole }}</span>
+                      <ul class="colored">
+                        {% if tutor.facebook %}
+                          <li><a href="{{ tutor.facebook }}" class="cl-fb"><i
+                                class="ti-facebook"></i></a></li>
+                        {% endif %}
+                        {% if tutor.google %}
+                          <li><a href="{{ tutor.google }}" class="cl-google"><i
+                                class="ti-google"></i></a></li>
+                        {% endif %}
+                        {% if tutor.twitter %}
+                          <li><a href="{{ tutor.twitter }}" class="cl-twitter"><i
+                                class="ti-twitter"></i></a></li>
+                        {% endif %}
+                      </ul>
+                    </div>
+
+                    <div class="cources_info_style3">
+                      {% assign totalCourses = 0 %}
+                      {% for courses in site.data.courses %}
+                        {% for course in courses %}
+                          {% if course.tutor == tutor.id %}
+                            {% assign totalCourses = totalCourses | plus: 1 %}
+                          {% endif %}
+                        {% endfor %}
+                      {% endfor %}
+                      <ul>
+                        <li><i class="ti-book mr-2"></i> {{ totalCourses }} courses</li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>

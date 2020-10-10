@@ -1,45 +1,81 @@
 {% include head.html %}
-{% assign course = site.data.courses[page.course] %}
 
-<div class="parallax bg-white page-section third">
-  <div class="container parallax-layer" data-opacity="true">
-    <div class="media v-middle media-overflow-visible">
-      <div class="media-body">
-        <div class="text-headline"><a href="{{ course.url }}">{{ course.title }}</a>:  {{ page.section }}</div>
+{% assign course = site.data.courses[page.course] %}
+{% assign tutor = site.data.tutors[course.tutor] %}
+
+<div class="ed_detail_head">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-12">
+        <div class="ed_header_caption">
+          <h2 class="ed_title"><a href="{{ course.url }}">{{ course.title
+              }}</a>: {{ page.section }}</h2>
+        </div>
       </div>
+
     </div>
   </div>
 </div>
 
-<div class="container">
-
-  <div class="page-section">
+<section class="bg-light">
+  <div class="container">
     <div class="row">
 
-      <div class="col-md-9">
+      <div class="col-lg-8 col-md-8">
 
-        <div class="page-section padding-top-none">
-          <div class="media media-grid v-middle">
-            <div class="media-body">
-              <h1 class="text-display-1 margin-none">{{ page.title }}</h1>
-            </div>
-          </div>
-          <br>
-          {{ content }}
-          <br>
-          <!-- TODO: Previous and Next -->
+        <div class="edu_wraper">
+          <h4 class="edu_title">{{ page.title }}</h4>
+          {{ content | markdownify }}
         </div>
 
       </div>
 
-      {% include lesson.courseContents.html course=course %}
+      <div class="col-lg-4 col-md-4">
+
+        <div class="edu_wraper">
+          <h4 class="edu_title">Contents</h4>
+          {% for section in course.contents %}
+            <div class="card">
+              <div id="heading{{ forloop.index }}" class="card-header bg-white
+                shadow-sm border-0">
+                <h6 class="mb-0 accordion_title">
+                  <a href="#" data-toggle="collapse" data-target="#collapse{{
+                    forloop.index}}" aria-expanded="{% if page.section ==
+                    section.name %}true{% else %}false{% endif %}"
+                    aria-controls="collapse{{ forloop.index }}" class="d-block
+                                   position-relative text-dark
+                    collapsible-link py-2">{{ section.name }}</a>
+                </h6>
+              </div>
+
+              <div id="collapse{{ forloop.index }}"
+                   aria-labelledby="heading{{ forloop.index }}"
+                   data-parent="#accordionExample" class="collapse {% if
+                    page.section == section.name %}show{% endif %}">
+                <div class="card-body pl-3 pr-3">
+                  <ul class="lectures_lists">
+
+                    {% for lesson in section.contents %}
+                      <a href="{{ lesson.url }}">
+                        <li {% if page.title == lesson.name %}class="theme-cl"{% endif %}>
+                            {{ lesson.name }}
+                        </li>
+                      </a>
+                    {% endfor %}
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+      </div>
 
     </div>
-
   </div>
-
-</div>
+</section>
 
 {% include footer.html %}
-
-<script src="/js/app/translator.js"></script>
+<script src="/js/translator.js"></script>

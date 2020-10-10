@@ -1,0 +1,21 @@
+<div class="trips_wrap full light-colors">
+  <div class="container">
+    <div class="row m-0">
+
+      {% for trip in site.facts %}
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="trips">
+          <div class="trips_icons">
+            <i class="{{ trip.icon }}"></i>
+          </div>
+          <div class="trips_detail">
+            <h4>{{ trip.title }}</h4>
+            <p>{{ trip.detail }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>

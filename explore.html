@@ -4,63 +4,94 @@ subtitle: Explore the available courses in Learning
 layout: page
 ---
 
-<div class="col-md-9">
-  <div class="row" data-toggle="isotope">
-{% for post in site.posts %}
-{% assign course = site.data.courses[post.course] %}
-{% assign tutor = site.data.tutors[course.tutor] %}
 
-<div class="item col-xs-12 col-sm-6 col-lg-4">
-  <div class="panel panel-default paper-hadow" data-z="0.5">
+<div class="row">
 
-    <div class="cover overlay cover-image-full hover">
-      <img src="{{ course.thumb }}" height="150" class="img icon-block
-      height-150">
-      <a href="{{ course.url }}" class="overlay overlay-full overlay-hover
-        overlay-bg-white">
-        <span class="v-center">
-          <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-        </span>
-      </a>
-    </div>
+  {% include explore.filterSidebar.html %}
 
-    <div class="panel-body">
-      <h4 class="text-headline margin-v-0-10"><a href="{{ course.url }}">{{
-          course.title }}</a></h4>
-      <p class="small margin-none">
-        {% if course.completed == 1 %}
-          This course is complete
-        {% else %}
-          This course is still in development
-        {% endif %}
-      </p>
-    </div>
+  <div class="col-lg-8 col-md-12 col-sm-12 order-1 order-lg-2 order-md-1">
 
-    <hr class="margin-none">
-
-    <div class="panel-body">
-      <p>{{ course.description }}</p>
-      <div class="media v-middle">
-        <div class="media-left">
-          <img class="img-circle width-40" src="{{ tutor.pp }}">
-        </div>
-        <div class="media-body">
-          <h4><a href="/tutor/{{ course.tutor }}">{{ tutor.name }}</a><br></h4>
-          Tutor
-        </div>
+    <div class="row align-items-center mb-3">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        There are <strong>{{ site.data.courses.size | minus: 1 }}</strong> courses for
+        you
       </div>
+
+      <!-- TODO: Filter courses -->
+    </div>
+
+    <div class="row">
+
+      {% for post in site.posts %}
+        {% assign course = site.data.courses[post.course] %}
+        {% assign tutor = site.data.tutors[course.tutor] %}
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <div class="education_block_grid style_2">
+
+            <div class="education_block_thumb n-shadow">
+              <a href="{{ course.url }}"><img src="{{ course.thumb }}"
+                class="img-fluid"></a>
+            </div>
+
+            <div class="education_block_body">
+              <h4 class="bl-title">
+                <a href="{{ course.url }}">{{ course.title }}</a>
+              </h4>
+            </div>
+
+            <div class="cources_facts">
+              <ul class="cources_facts_list">
+                {% for tag in course.tags %}
+                  <li class="facts-{{ forloop.index }}">{{ tag }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="cources_info">
+              <div class="cources_info_first">
+                <ul>
+
+                  {% assign lessons = 0 %}
+
+                  {% for contents in course.contents %}
+                    {% for lesson in contents.contents %}
+                      {% assign lessons = lessons | plus: 1 %}
+                    {% endfor %}
+                  {% endfor %}
+
+                  <li><strong>{{ lessons }}</strong> lessons</li>
+                  <li {% if course.completed == 1 %}class="theme-cl"{% endif %}>
+                    {% if course.completed == 1 %}Completed{% else
+                    %}Incomplete{% endif %}
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+
+            <div class="education_block_footer">
+              <div class="education_block_author">
+
+                <div class="path-img">
+                  <a href="/tutor/{{ course.tutor }}">
+                    <img src="{{ tutor.pp }}" class="img-fluid">
+                  </a>
+                </div>
+
+                <h5><a href="/tutor/{{ course.tutor }}">{{ tutor.name }}</a></h5>
+
+              </div>
+              <span class="education_block_time"><i
+                    class="ti-alarm-clock"></i> {{ course.duration }}</span>
+            </div>
+
+          </div>
+        </div>
+      {% endfor %}
+
     </div>
 
   </div>
-</div>
-
-{% endfor %}
-  </div>
-</div>
-
-<div class="col-md-3">
-
-  {% include sidebar.search.html %}
-  {% include sidebar.coursesCategories.html %}
 
 </div>

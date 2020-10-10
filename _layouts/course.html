@@ -1,244 +1,173 @@
 {% include head.html %}
 
 {% assign course = site.data.courses[page.course] %}
+{% assign tutor = site.data.tutors[course.tutor] %}
 
-<div class="parallax bg-white page-section">
-  <div class="parallax-layer container" data-opacity="true">
+{% assign lessons = 0 %}
 
-    <div class="media v-middle">
-      <div class="media-body">
+{% for contents in course.contents %}
+{% for lesson in contents.contents %}
+  {% assign lessons = lessons | plus: 1 %}
+{% endfor %}
+{% endfor %}
 
-        <h1 class="text-display-1 margin-none">{{ course.title }}</h1>
+<div class="ed_detail_head">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-4 col-md-5">
 
-      </div>
-
-      <div class="media-right">
-        <a href="/explore" class="btn btn-white">Library</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-
-    <div class="col-lg-9 col-md-8">
-
-      <div class="page-section">
-        {{ content | markdownify }}
-
-        <p class="margin-none">
-          {% for tag in course.tags  %}
-          <span class="label label-grey-200">{{ tag }}</span>
-          {% endfor %}
-        </p>
-      </div>
-
-      <div class="page-section">
-
-        <div class="row">
-          <div class="col-md-7">
-            <h2 class="text-headline margin-none">What you will learn</h2>
-            <p class="text-subhead text-light">When you complete this course,
-            you will learn:</p>
-            <ul class="list-group relative paper-shadow">
-
-              {% for achievement in course.youlearn %}
-              <li class="list-group-item paper-shadow">
-                <div class="media v-middle">
-                  <div class="media-left">
-                    <div class="icon-block s30 bg-grey-500 text-white img-circle">
-                      <i class="fa fa-check"></i>
-                    </div>
-                  </div>
-                  <div class="media-body text-body-2">
-                    {{ achievement }}
-                  </div>
-                </div>
-              </li>
-              {% endfor %}
-
-            </ul>
-          </div>
-
-          <div class="col-md-5">
-            <h2 class="text-headline margin-none">Requirements</h2>
-            <p class="text-subhead text-light">Requirements to get the best
-            experience when passing through this course.</p>
-            <ul class="list-group relative paper-shadow">
-
-              {% for requirement in course.requirements %}
-              <li class="list-group-item paper-shadow">
-                <div class="media v-middle">
-                  <div class="media-left">
-                    <div class="icon-block s30 bg-indigo-300 text-white img-circle">
-                      <i class="fa fa-check"></i>
-                    </div>
-                  </div>
-                  <div class="media-body text-body-2">
-                    {{ requirement }}
-                  </div>
-                </div>
-              </li>
-              {% endfor %}
-
-            </ul>
+        <div class="property_video">
+          <div class="thumb">
+            <img class="pro_img img-fluid w100" src="{{ course.thumb }}">
           </div>
         </div>
 
-        <div class="row">
+      </div>
 
-          <div class="col-md-12" id="contents">
-            <h2 class="text-headline margin-none">Contents</h2>
-            <p class="text-subhead text-light">Contents of the course:</p>
+      <div class="col-lg-8 col-md-7">
 
-            {% for category in course.contents %}
-              <div class="panel panel-default curriculum {% if forloop.index == 1 %}open{% endif %} paper-shadow"
-                data-z="0.5">
+        <div class="ed_detail_wrap">
+          <ul class="cources_facts_list">
+            {% for tag in course.tags %}
+              <li class="facts-{{ forloop.index }}">{{ tag }}</li>
+            {% endfor %}
+          </ul>
 
-                <div class="panel-heading panel-heading-gray"
-                     data-toggle="collapse" data-target="#content-{{
-                     forloop.index }}">
+          <div class="ed_header_caption">
+            <h2 class="ed_title">{{ course.title }}</h2>
+            <ul>
+              <li><i class="ti-calendar"></i> {{ course.duration }}</li>
+              <li><i class="ti-control-forward"></i> {{ lessons }} lessons</li>
+            </ul>
+          </div>
 
-                  <div class="media">
-                    <div class="media-left">
-                      <span class="icon-block img-circle bg-indigo-300 half text-white">
-                        <i class="fa fa-graduation-cap"></i>
-                      </span>
-                    </div>
-                    <div class="media-body">
-                      <h4 class="text-headline">{{ category.name }}</h4>
-                      <p>{{ category.description }}</p>
-                    </div>
+          <div class="ed_header_short">
+            <p>{{ course.description }}</p>
+          </div>
+
+          <div class="ed_rate_info">
+            <div class="review_counter">
+              <strong class="{% if course.completed == 1 %}high{% else %}mid{%
+                endif %}">{% if course.completed == 1 %}Complete{% else
+                %}Incomplete{% endif %}</strong>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<section class="bg-light">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-8 col-md-8">
+
+        <div class="edu_wraper">
+          <h4 class="edu_title">Course Overview</h4>
+          {{ content | markdownify }}
+          <h6>Requirements</h6>
+          <ul class="lists-3">
+            {% for requirement in course.requirements %}
+              <li>{{ requirement }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="edu_wraper">
+          <h4 class="edu">Contents</h4>
+
+          <div id="accordionExample" class="accordion shadow circullum">
+
+            {% for section in course.contents %}
+              <div class="card">
+                <div id="heading{{ forloop.index }}" class="card-header bg-white
+                  shadow-sm border-0">
+                  <h6 class="mb-0 accordion_title">
+                    <a href="#" data-toggle="collapse" data-target="#collapse{{
+                      forloop.index}}" aria-expanded="false"
+                      aria-controls="collapse{{ forloop.index }}" class="d-block
+                                     position-relative text-dark
+                      collapsible-link py-2">{{ section.name }}</a>
+                  </h6>
+                </div>
+
+                <div id="collapse{{ forloop.index }}"
+                     aria-labelledby="heading{{ forloop.index }}"
+                     data-parent="#accordionExample" class="collapse">
+                  <div class="card-body pl-3 pr-3">
+                    <ul class="lectures_lists">
+
+                      {% for lesson in section.contents %}
+                        <a href="{{ lesson.url }}">
+                          <li>
+                              {{ lesson.name }}
+                          </li>
+                        </a>
+                      {% endfor %}
+
+                    </ul>
                   </div>
-
-                  <span class="collapse-status collapse-open">Open</span>
-                  <span class="collapse-status collapse-close">Close</span>
-
                 </div>
-
-                <div class="list-group collapse {% if forloop.index == 1 %}in{%
-                  endif %}" id="content-{{ forloop.index }}">
-                  {% for lesson in category.contents %}
-                    <div class="list-group-item media" data-target="{{ lesson.url }}">
-                      <div class="media-left">
-                        {{ forloop.index }}.
-                      </div>
-                      <div class="media-body">
-                        <i class="fa fa-fw fa-circle text-grey-200"></i> {{
-                        lesson.name }}
-                      </div>
-                    </div>
-                  {% endfor %}
-                </div>
-
               </div>
             {% endfor %}
 
-            <!--
-              <ul class="list-group relative paper-shadow">
-
-                  {% for category in course.contents %}
-
-                  <li class="list-group-item paper-shadow active">
-                    <div class="media v-middle">
-                      <div class="media-body text-body-2">
-                        {{ category.name }}
-                      </div>
-                    </div>
-                  </li>
-
-                    {% for lesson in category.contents %}
-                      <li class="list-group-item paper-shadow">
-                        <div class="media v-middle">
-                          <div class="media-body text-body-2">
-
-                            {% if lesson.type == "quiz" %}
-                              <a href="{{ lesson.url }}">Quiz: {{ lesson.name }}</a>
-                            {% else %}
-                              <a href="{{ lesson.url }}">{{ lesson.name }}</a>
-                            {% endif %}
-
-                          </div>
-                        </div>
-                      </li>
-                    {% endfor %}
-
-                  {% endfor %}
-
-
-              </ul>
-            -->
           </div>
+        </div>
+
+        <div class="single_instructor">
+          <div class="single_instructor_thumb">
+            <a href="/tutor/{{ course.tutor }}">
+              <img src="{{ tutor.pp }}" class="img-fluid">
+            </a>
+          </div>
+
+          <div class="single_instructor_caption">
+            <h4><a href="/tutor/{{ course.tutor }}">{{ tutor.name }}</a></h4>
+            <p>{{ tutor.about }}</p>
+            <ul class="social_info">
+              {% if tutor.facebook %}
+                <li><a href="{{ tutor.facebook }}"><i class="ti-facebook"></i></a></li>
+              {% endif %}
+              {% if tutor.twitter %}
+                <li><a href="{{ tutor.twitter }}"><i class="ti-twitter"></i></a></li>
+              {% endif %}
+              {% if tutor.linkedin %}
+                <li><a href="{{ tutor.linkedin }}"><i class="ti-linkedin"></i></a></li>
+              {% endif %}
+              {% if tutor.instagram %}
+                <li><a href="{{ tutor.instagram }}"><i class="ti-instagram"></i></a></li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="list-single-main-item fl-wrap">
+            {% include disqus.html %}
+        </div>
+
+      </div>
+
+      <div class="col-lg-4 col-md-4">
+
+        <div class="edu_wraper">
+          <h4 class="edu_title">Course Features</h4>
+          <ul class="edu_list right">
+            <li><i class="ti-files"></i>Lessons: <strong>{{ lessons }}</strong></li>
+            <li><i class="ti-time"></i>Duration: <strong>{{ course.duration }}</strong></li>
+            <li><i class="ti-tag"></i>Skill level: <strong>{{ course.skillLevel }}</strong></li>
+            <li><i class="ti-flag-alt"></i>Language: <strong>{{ course.language }}</strong></li>
+          </ul>
         </div>
 
       </div>
 
     </div>
-
-    <div class="col-lg-3 col-md-4">
-
-      <div class="page-section">
-
-        <div class="panel panel-default paper-shadow" data-z="0.5"
-          data-hover-z="1" data-animated>
-          <div class="panel-heading">
-            <h4 class="text-headline">Course</h4>
-          </div>
-          <div class="panel-body">
-
-            <p class="text-caption">
-              <i class="fa fa-clock-o fa-fw"></i> {{ course.duration }} &nbsp;
-              <i class="fa fa-calendar fa fw"></i> {{ page.date |
-              date_to_long_string }}
-              <br>
-              <i class="fa fa-user fa-fw"></i> Tutor: {{
-              site.data.tutors[course.tutor].name }}
-            </p>
-
-          </div>
-
-          <hr class="margin-none">
-
-          <div class="panel-body text-center">
-            <p><a class="btn btn-success btn-lg paper-shadow relative"
-              href="#contents" data-z="1" data-hover-z="2"
-              data-animated>Contents</a></p>
-          </div>
-        </div>
-
-        <div class="panel panel-default paper-shadow" data-z="0.5"
-          data-hover-z="1" data-animated>
-          <div class="panel-body">
-
-            <div class="media v-middle">
-              <div class="media-left">
-                <img src="{{ site.data.tutors[course.tutor].pp }}" width="60"
-                class="img-circle">
-              </div>
-
-              <div class="media-body">
-                <h4 class="text-title margin-none"><a href="/tutor/{{
-                    course.tutor }}">{{
-                    site.data.tutors[course.tutor].name }}</a></h4>
-                <span class="caption text-light">About the tutor.</span>
-              </div>
-            </div>
-            <div class="expandable expandable-indicator-white expandable-trigger">
-              <div class="expandable-content">
-                <p>{{ site.data.tutors[course.tutor].about }}</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
   </div>
-</div>
+</section>
 
 {% include footer.html %}

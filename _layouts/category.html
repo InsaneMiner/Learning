@@ -1,90 +1,54 @@
 {% include head.html %}
+{% include pageTitle.html %}
 
-{% assign category = site.data.courses.categories[page.category] %}
+<section class="pt-0">
+  <div class="container">
 
-<div class="parallax bg-white page-section">
-  <div class="container parallax-layer" data-opacity="true">
-    <div class="media v-middle">
-      <div class="media-body">
-        <h1 class="text-display-2 margin-none">{{ category.name }}</h1>
-        <p class="text-light lead">{{ category.description }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+    <div class="row">
 
-<div class="container">
+      {% include explore.filterSidebar.html %}
 
-  <div class="page-section">
-
-      <div class="col-md-9">
-
-        <div class="row" data-toggle="isotope">
-
-          {% for post in site.posts %}
+      <div class="col-lg-8 col-md-12 col-sm-12 order-1 order-lg-2 order-md-1">
+        {% for post in site.posts %}
           {% assign course = site.data.courses[post.course] %}
           {% if course.category == page.category %}
-          {% assign tutor = site.data.tutors[course.tutor] %}
-          <div class="item col-xs-12 col-sm-6 col-lg-4">
-            <div class="panel panel-default paper-hadow" data-z="0.5">
+            {% assign tutor = site.data.tutors[course.tutor] %}
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="education_block_list_layout">
 
-              <div class="cover overlay cover-image-full hover">
-                <img src="{{ course.thumb }}" height="150" class="img icon-block
-                height-150">
-                <a href="{{ course.url }}" class="overlay overlay-full overlay-hover
-                  overlay-bg-white">
-                  <span class="v-center">
-                    <span class="btn btn-circle btn-white btn-lg"><i class="fa fa-graduation-cap"></i></span>
-                  </span>
-                </a>
-              </div>
-
-              <div class="panel-body">
-                <h4 class="text-headline margin-v-0-10"><a href="{{ course.url }}">{{
-                    course.title }}</a></h4>
-                <p class="small margin-none">
-                  {% if course.completed == 1 %}
-                    This course is complete
-                  {% else %}
-                    This course is still in development
-                  {% endif %}
-                </p>
-              </div>
-
-              <hr class="margin-none">
-
-              <div class="panel-body">
-                <p>{{ course.description }}</p>
-                <div class="media v-middle">
-                  <div class="media-left">
-                    <img class="img-circle width-40" src="{{ tutor.pp }}">
+                  <div class="education_block_thumb n-shadow">
+                    <a href="{{ course.url }}"><img src="{{ course.thumb }}" class="img-fluid"></a>
                   </div>
-                  <div class="media-body">
-                    <h4><a href="/tutor/{{ course.tutor }}">{{ tutor.name }}</a><br></h4>
-                    Tutor
+
+                  <div class="list_layout_ecucation_caption">
+
+                    <div class="education_block_body">
+                      <h4 class="bl-title"><a href="{{ course.url }}">{{
+                          course.title }}</a></h4>
+                    </div>
+
+                   <div class="education_block_footer mt-3">
+                    <div class="education_block_author">
+                      <div class="path-img">
+                        <a href="/tutor/{{ tutor.id }}">
+                          <img src="{{ tutor.pp }}" class="img-fluid">
+                        </a>
+                      </div>
+                      <h5><a href="/tutor/{{ tutor.id }}">{{ tutor.name }}</a></h5>
+                    </div>
+                   </div>
+
                   </div>
+
                 </div>
               </div>
-
-            </div>
-          </div>
           {% endif %}
-          {% endfor %}
-
-        </div>
-
-
-      </div>
-
-      <div class="col-md-3">
-
-        {% include sidebar.search.html %}
-        {% include sidebar.coursesCategories.html %}
-
+        {% endfor %}
       </div>
 
     </div>
 
-</div>
+  </div>
+</section>
 
 {% include footer.html %}

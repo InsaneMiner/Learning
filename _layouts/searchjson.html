@@ -8,12 +8,13 @@
     "duration": "{{ course.duration }}",
     "description": "{{ course.description }}",
     "url": "{{ post.url }}",
-    "thumb": "{{ post.thumb }}",
+    "thumb": "{{ course.thumb }}",
     "tutor": "{{ course.tutor }}",
     "tutorName": "{{ site.data.tutors[course.tutor].name }}",
     "tutorProfile": "{{ site.data.tutors[course.tutor].pp }}",
     "language": "{{ course.language }}",
-    "type": "course"
+    "type": "course",
+    "completed": {{ course.completed }}
   },
   {% endfor %}
   {% assign entriesLength = site.data.blog.entries.size | dividedby: 2 %}
@@ -31,6 +32,7 @@
           "tags": "{{ entry.tags | join: ',' }}",
           "description": "{{ entry.description }}",
           "url": "{{ entry.url }}",
+          "thumb": "{{ entry.thumb }}",
           "tutor": "{{ entry.tutor }}",
           "tutorName": "{{ tutor.name }}",
           "tutorProfile": "{{ tutor.pp }}",

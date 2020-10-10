@@ -1,7 +1,8 @@
 sarah:
+  id: sarah
   name: Sarah
-  twitter: HermadesCGCO
-  pp: /images/tutorIcons/Sarah.jpg
+  twitter: https://twitter.com/HermadesCGCO
+  pp: /img/tutorIcons/Sarah.jpg
   about: >-
     Hi!. I'm a grey-hat hacktivist, I am a free software enthusiast
     I am not a professional but I like teaching other what I know, as the knowledge
@@ -10,3 +11,4 @@ sarah:
   roles:
     - Hacker
     - Programmer
+  mainRole: Admin

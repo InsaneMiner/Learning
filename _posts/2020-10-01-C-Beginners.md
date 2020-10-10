@@ -1,6 +1,7 @@
 ---
 course: c_beginners
 tags: Programming, Course, C, C++
+uid: CourseCBeginners
 layout: course
 ---
 

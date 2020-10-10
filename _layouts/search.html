@@ -1,42 +1,41 @@
 {% include head.html %}
+{% include pageTitle.html %}
 
-<div class="parallax overflow-hidden page-section bg-primary">
-  <div class="container parallax-layer" data-opacity="true">
-    <div class="media media-grid v-middle">
-      <div class="media-left">
-        <div class="icon-block half text-white"><i class="fa fa-search"></i></div>
-      </div>
-      <div class="media-body">
-        <div class="text-display-2 text-white margin-none">Search</div>
-        <p>Displaying search results for: <span id="injectQuery"></span></p>
-      </div>
-    </div>
-  </div>
-</div>
+<section class="pt-0">
+  <div class="container">
 
-<div class="container">
-  <div class="page-section">
+    <div class="row">
 
-    <div class="col-md-9">
-      <div class="row">
-        <div class="col-12">
-          <h1>Courses</h1>
-          <div id="courses"></div>
-          <h1>Blog entries</h1>
-          <div id="entries"></div>
+      {% include explore.filterSidebar.html %}
+
+      <div class="col-lg-8 col-md-12 col-sm-12 order-1 order-lg-2 order-md-1">
+
+        <div class="row align-items-center mb-3">
+          <div class="col-lg-6 col-md-6 col-sm-12">
+            Displaying results for: <strong id="injectQuery"></strong>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <h4>Courses</h4>
+            <div id="courses"></div>
+          </div>
+
+          <div class="col-lg-12 col-md-12 col-sm-12">
+            <h4>Entries</h4>
+            <div id="entries"></div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <div class="col-md-3">
-      {% include sidebar.search.html %}
-    </div>
-
   </div>
-</div>
+</section>
 
 {% include footer.html %}
-<script src="/js/app/search.js"></script>
+<script src="/js/search.js"></script>
 <script>
   var term = getQueryVariable("q")
 
@@ -66,42 +65,61 @@
 
   function drawPost(post) {
       var parent = document.querySelector("#courses")
-      draw(post, parent)
+      draw(post, parent, "post")
   }
 
   function drawEntry(entry) {
       var parent = document.querySelector("#entries")
-      draw(entry, parent)
+      draw(entry, parent, "entru")
   }
 
-  function draw(content, parent) {
-      var html = `
-<div class="media media-grid media-paper-shadow margin-top-none s-container">
-  <div class="media-left">
-   <div class="icon-block half img-circle bg-grey-300">
-    <i class="fa fa-search text-white"></i>
-   </div>
-  </div>
+  function draw(content, parent, type) {
 
-  <div class="media-body">
-    <div class="panel panel-default paper-shadow" data-z="0.5">
-      <div class="panel-body">
-        <h4 class="text-title media-heading">
-          <a href="${content.url}" class="link-text-color">${content.title}</a>
-        </h4>
-        <p class="text-light text-caption">
-          posted by
-        <a href="/tutor/${content.tutor}">
-              <img src="${content.tutorProfile}" class="img-circle width-20">
-              ${content.tutorName}
-            </a>
-        </p>
-        <p class="text-light">${content.description}</p>
-      </div>
+      if(type == "post") {
+          if(content.completed) {
+              var completion = "<strong class='high'>Complete</strong>"
+            } else {
+                var completion = "<strong class='mid'>Incomplete</strong>"
+            }
+       } else {
+           var completion = ""
+      }
+
+      var html = `
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+  <div class="education_block_list_layout">
+
+    <div class="education_block_thumb n-shadow">
+      <a href="${content.url}"><img src="${content.thumb}" class="img-fluid"></a>
     </div>
+
+    <div class="list_layout_ecucation_caption">
+
+      <div class="education_block_body">
+        <h4 class="bl-title"><a href="${content.url}">${content.title}</a></h4>
+        <div class="course_rate_system">
+          <div class="course_reviews_info">
+            ${completion}
+          </div>
+        </div>
+      </div>
+
+ <div class="education_block_footer mt-3">
+  <div class="education_block_author">
+    <div class="path-img">
+      <a href="/tutor/${content.tutor}">
+        <img src="${content.tutorProfile}" class="img-fluid">
+      </a>
+    </div>
+    <h5><a href="/tutor/${content.tutor}">${content.tutorName}</a></h5>
+  </div>
+ </div>
+
+    </div>
+
   </div>
 </div>
       `
-      parent.insertAdjacentHTML("beforeend", html)
+      parent.insertAdjacentHTML("beforeend", html);
   }
 </script>

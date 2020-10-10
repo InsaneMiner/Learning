@@ -1,24 +1,12 @@
 {% include head.html %}
+{% include pageTitle.html %}
 
-<div class="parallax bg-white page-section">
-  <div class="container parallax-layer" data-opacity="true">
-    <div class="media v-middle">
-      <div class="media-body">
-        <h1 class="text-display-2 margin-none">{{ page.title }}</h1>
+<section class="pt-0">
+  <div class="container">
 
-        {% if page.subtitle %}
-        <p class="text-light lead">{{ page.subtitle }}</p>
-        {% endif %}
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="page-section">
     {{ content | markdownify }}
+
   </div>
-</div>
+</section>
 
 {% include footer.html %}

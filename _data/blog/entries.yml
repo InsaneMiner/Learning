@@ -9,6 +9,7 @@ welcome-to-learning:
   language: english
   category: Information
   uid: welcome-to-learning
+  thumb: /img/blog/welcome-to-learning.jpg
 
 hack-and-not-get-caught:
   title: How to hack and not to get caught
@@ -22,6 +23,7 @@ hack-and-not-get-caught:
   language: english
   category: Hacking
   uid: hack-and-not-get-caught
+  thumb: /img/blog/hack-and-not-get-caught.jpg
 
 first-three-courses:
   title: The first three courses of Learning
@@ -35,3 +37,4 @@ first-three-courses:
   language: english
   category: Information
   uid: first-three-courses
+  thumb: /img/blog/first-three-courses.png

@@ -5,9 +5,28 @@ author: Sarah
 locale: British English
 keywords: "learning, learninglms, lms, courses, free, learn, hacking, programming"
 copyDate: 2020
-version: v0.0.1-Beta
+version: 0.0.1
+supportMail: saraaahinreallife@gmail.com
 
-baseurl: # URL of the site, i.e: learninglms.gq
+heroTitle: Start Learning Now
+heroText: Learn any topic, any time, completely free and open source.
+
+facts:
+  - icon: ti-video-camera
+    title: Quality courses
+    detail: Learn from the courses posted and maintained by the community and blog entries posted by contributors.
+  - icon: ti-infinite
+    title: Free access
+    detail: All of the content posted in Learning is, and will remain free forever
+  - icon: ti-star
+    title: Open source
+    detail: Learning is completely open source. Watch and modify its source code.
+
+shortAbout: >-
+  Learning is a completely free and opensource learning platform made in Jekyll by using the <a href="https://codeminifier.com/learnup-1.1">LearnUp</a>
+  HTML template. This website is aimed to provide a full-quality learning system for everyone in the planet. You can clone the Learning's source code and
+  fix bugs, modify lessons, create blog entries, create lessons and even entire courses.
+
 pageurl: https://learninglms.gq
 
 markdown: kramdown

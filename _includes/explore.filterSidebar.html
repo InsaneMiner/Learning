@@ -1,0 +1,44 @@
+<div class="col-lg-4 col-md-12 col-sm-12 order-2 order-lg-1 order-md-2">
+  <div class="page_sidebar hide-23">
+
+    <form class="form-inline addons mb-3" action="/search" method="GET">
+      <input class="form-control" type="text" placeholder="Search..." name="q"
+      aria-label="Search" autocomplete="off">
+      <button class="btn mu-2 my-sm-0" type="submit"><i class="ti-search"></i></button>
+    </form>
+
+    <h4 class="side_title">Course categories</h4>
+    <ul class="no-ul-list mb-3">
+      {% assign index = 0 %}
+      {% for categories in site.data.courses.categories %}
+        {% assign index = index | plus: 1 %}
+        {% for category in categories %}
+          {% if category.name != nil %}
+            {% assign url = '/category/' | append: category.slug | append: "/" %}
+            <li onclick="window.location.href = '{{ url }}'">
+                <input type="checkbox" id="aa-{{ index }}" class="checkbox-custom" {% if page.url == url %}checked{% endif %}>
+                <label for="aa-{{ index }}" class="checkbox-custom-label">{{ category.name }}</label>
+              </li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+
+    <h4 class="side_ti">Tutors</h4>
+    <ul class="no-ul-list mb-3">
+      {% for tutors in site.data.tutors %}
+        {% assign index = index | plus: 1 %}
+        {% for tutor in tutors %}
+          {% if tutor.name != nil %}
+            {% assign url = '/tutor/' | append: tutor.id | append: '/' %}
+            <li onclick="window.location.href = '{{ url }}'">
+                <input type="checkbox" id="ab-{{ index }}" class="checkbox-custom" {% if page.url == url %}checked{% endif %}>
+                <label for="ab-{{ index }}" class="checkbox-custom-label">{{ tutor.name }}</label>
+            </li>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </ul>
+
+  </div>
+</div>

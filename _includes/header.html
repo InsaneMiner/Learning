@@ -1,62 +1,45 @@
-<div class="navbar navbar-default navbar-fixed-top navbar-size-large
-     navbar-size-xlarge paper-shadow" data-z="0" data-animated role="navigation">
+<div class="header {% if page.headerTransparent %}header-transparent{% else
+     %}header-light head-shadow{% endif %}">
   <div class="container">
 
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed"
-        data-toggle="collapse" data-target="#main-nav">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <div class="navbar-brand navbar-brand-logo">
-        <a href="/" class="svg">
-          {% include logoSvg.html %}
-        </a>
+    <div id="navigation" class="navigation navigation-landsc">
+      <div class="nav-header">
+        <a class="nav-brand static-logo" href="/"><img src="/img/logo.svg"
+          class="logo"></a>
+        <div class="nav-toggle"></div>
       </div>
-    </div>
 
-    <!-- Collect the nav links, forms and other content for toggling -->
-    <div class="collapse navbar-collapse" id="main-nav">
+      <div class="nav-menus-wrapper" style="transition-property: none;">
 
-      <ul class="nav navbar-nav navbar-nav-margin-left">
+        <ul class="nav-menu">
 
-        <!-- Home menu -->
-        <li><a href="/">Home</a></li>
-        <!-- End home menu -->
+          <li class="{% if page.url == '/' %}active{% endif %}"><a href="/">Home</a></li>
+          <li class="{% if page.url == '/explore' or page.url == '/blog' %}active{% endif %}">
+            <a href="#">Explore<span class="submenu-indicator"></span></a>
+            <ul class="nav-dropdown nav-submenu">
+              <li><a href="/explore">Courses</a></li>
+              <li><a href="/blog">Blog</a></li>
+              <li><a href="/tutors">Tutors</a></li>
+            </ul>
+          </li>
+          <li class="{% if page.url == '/contribute' or page.url == '/donate'
+                %}active{% endif %}">
+            <a href="#">Contribute<span class="submenu-indicator"></span></a>
+            <ul class="nav-dropdown nav-submenu">
+              <li><a href="/contribute">Contribution Guide</a></li>
+              <li><a href="/donate">Donate</a></li>
+            </ul>
+          </li>
 
-        <!-- Explore menu -->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Explore
-            <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/explore">Courses</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/tutors">Tutors</a></li>
-          </ul>
-        </li>
-        <!-- End explore menu -->
+          <li><a href="{{ site.sourceCode }}">Source Code</a></li>
 
-        <!-- Contribute menu -->
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Contribute
-          <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="/contribute">Contribution Guide</a></li>
-            <li><a href="/donate">Donate</a></li>
-          </ul>
-        </li>
-        <!-- End contribute menu -->
+        </ul>
 
-        <!-- Source menu -->
-        <li><a href="{{ site.sourceCode }}">Source Code</a></li>
-        <!-- End Source menu -->
-
-      </ul>
+      </div>
 
     </div>
 
   </div>
 </div>
+
+<div class="clearfix"></div>

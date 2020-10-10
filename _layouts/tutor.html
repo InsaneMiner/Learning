@@ -2,88 +2,60 @@
 
 {% assign tutor = site.data.tutors[page.tutor] %}
 
-<div class="parallax overflow-hidden bg-blue-400 page-section third">
-  <div class="container parallax-layer" data-opacity="true">
-    <div class="media v-middle">
-      <div class="media-left text-center">
-        <a href="#">
-          <img src="{{ tutor.pp }}" class="img-circle width-80">
-        </a>
+<div class="image-cover ed_detail_head invers" style="background: #0b1c38;"
+  data-overlay="0">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-lg-12 col-md-12">
+        <div class="viewer_detail_wraps">
+          <div class="viewer_detail_thumb">
+            <img class="img-fluid" src="{{ tutor.pp }}">
+            <div class="viewer_status">{{ tutor.mainRole }}</div>
+          </div>
+          <div class="caption">
+            <div class="viewer_header">
+              <h4>{{ tutor.name }}</h4>
+              <span class="viewer_location">{{ tutor.roles | join: ', ' }}</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="media-body">
-        <h1 class="text-white text-display-1 margin-v-0">{{ tutor.name }}</h1>
-      </div>
-      <div class="media-right">
-        <span class="label bg-blue-500">Tutor</span>
-      </div>
+
     </div>
   </div>
 </div>
 
-<div class="container">
+<section>
+  <div class="container">
+    <div class="row">
 
-  <div class="page-section">
-    <div class="col-md-12">
-      <h1>{{ tutor.name }}'s courses:</h1>
-      <div class="row" data-toggle="isotope">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xl-12">
+        <h2>{{ tutor.name }}'s courses</h2>
+      </div>
 
-          {% for post in site.posts %}
-          {% assign course = site.data.courses[post.course] %}
-          {% if course.tutor == page.tutor %}
-            <div class="item col-xs-12 col-sm-4 col-lg-3">
-              <div class="panel panel-default paper-shadow" data-z="0.5">
-
-                <div class="cover overlay cover-image-full hover">
-                  <img src="{{ course.thumb }}" height="140" class="img
-                  icon-block height-150">
-
-                  <a href="{{ course.url }}" class="overlay overlay-full
-                    overlay-hover overlay-bg-white">
-                    <span class="v-center">
-                      <span class="btn btn-circle btn-white btn-lg"><i class="fa
-                          fa-graduation-cap"></i></span>
-                    </span>
-                  </a>
+      {% for post in site.posts %}
+        {% assign course = site.data.courses[post.course] %}
+        {% if course.tutor == page.tutor %}
+          <div class="col-lg-4 col-md-6">
+            <div class="edu-watching">
+              <div class="property_video sm">
+                <div class="thumb">
+                  <img class="pro_img img-fluid w100" src="{{ course.thumb }}">
                 </div>
-
-                <div class="panel-body">
-                  <h4 class="text-headline margin-v-0-10">
-                    <a href="{{ course.url }}">{{ course.title }}</a>
-                  </h4>
-                  <p class="small margin-none">
-                    {% if course.completed == 1 %}
-                      This course is complete
-                    {% else %}
-                      This course is still in development
-                    {% endif %}
-                  </p>
+              </div>
+              <div class="edu_video detail">
+                <div class="edu_video_header">
+                  <h4><a href="{{ course.url }}">{{ course.title }}</a></h4>
                 </div>
-
-                <hr class="margin-none">
-
-                <div class="panel-body">
-                  <p>{{ course.description }}</p>
-                  <div class="media v-middle">
-                    <div class="media-left">
-                      <img class="img-circle width-40" src="{{ tutor.pp }}">
-                    </div>
-                    <div class="media-body">
-                      <h4><a href="#">{{ tutor.name }}</a><br></h4> Tutor
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
-          {% endif %}
-          {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
 
-        </div>
-
-      </div>
     </div>
   </div>
-
-</div>
+</section>
 
 {% include footer.html %}

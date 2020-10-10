@@ -1,6 +1,6 @@
 title: C for beginners
 description: Learn the C programming language from scratch
-thumb: /images/courses/c-beginners.jpg
+thumb: /img/courses/c-beginners.jpg
 url: /C-Beginners/
 tags:
   - Programming
@@ -47,6 +47,8 @@ contents:
         url: /lessons/c_beginners/Control/control
 duration: 20hrs
 tutor: sarah
-language: english
+language: English
 category: programming
+skillLevel: Beginner
 completed: 0
+featured: 1
