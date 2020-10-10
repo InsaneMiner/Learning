@@ -53,11 +53,15 @@
                    data-parent="#accordionExample" class="collapse {% if
                     page.section == section.name %}show{% endif %}">
                 <div class="card-body pl-3 pr-3">
-                  <ul class="">
+                  <ul style="padding: 0; margin: 0; border-radius: 2px;
+                             overflow: hidden">
 
                     {% for lesson in section.contents %}
                       <a href="{{ lesson.url }}">
-                        <li {% if page.title == lesson.name %}class="theme-cl"{% endif %}>
+                        <li {% if page.title == lesson.name %}class="theme-cl"{%
+                          endif %} style="padding: 17px 15px; color: #24394e; position: relative;
+                          width: 100%; display: flex; align-items: center;
+                          font-weight: 600; cursor: pointer">
                             {{ lesson.name }}
                         </li>
                       </a>
