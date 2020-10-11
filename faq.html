@@ -29,7 +29,7 @@ layout: page
         <div id="myTabContent" class="tab-content tabs_content_creative">
 
           {% assign index = 0 %}
-          {% for faqs in site.data.faqs %}
+          {% for faqs in site.data.faqs reversed %}
             {% for faq in faqs %}
               {% if faq.tab != nil %}
                 {% assign index = index | plus: 1 %}
