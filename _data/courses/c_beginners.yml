@@ -45,6 +45,8 @@ contents:
     contents:
       - name: The Decision Control Structure
         url: /lessons/c_beginners/Control/control
+      - name: The if statement
+        url: /lessons/c_beginners/Control/if
 duration: 20hrs
 tutor: sarah
 language: English
