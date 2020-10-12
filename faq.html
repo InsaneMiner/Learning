@@ -14,12 +14,14 @@ layout: page
           <ul id="myTab" class="nav nav-tabs customize-tab tabs_creative"
             role="tablist">
 
+            {% assign index = 0 %}
             {% for tab in site.data.faqs.tabs %}
+              {% assign index = index | plus: 1 %}
               <li class="nav-item">
-                <a class="nav-link{% if forloop.index == 1 %} active{% endif %}"
+                <a class="nav-link{% if index == 1 %} active{% endif %}"
                   id="{{ tab }}-tab" data-toggle="tab" href="#{{ tab }}"
                   role="tab" aria-controls="{{ tab }}" aria-selected="{% if
-                  forloop.index == 1 %}true{% else %}false{% endif %}">{{ tab }}</a>
+                  index == 1 %}true{% else %}false{% endif %}">{{ tab }}</a>
               </li>
             {% endfor %}
 

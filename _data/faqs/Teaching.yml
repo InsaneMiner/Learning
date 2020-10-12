@@ -4,3 +4,5 @@ questions:
     answer: Sure!. You don't need a diploma or decades of experience to be good at something. As long as the course you create is quality content it will be added to Learning
   - question: Is this a technology-only learning website?
     answer: No. At learning you can teach anything. Are you good at chess? Create a chess course. Are you good at singing? Create a singing course. This is a teach-and-learn-anything website
+  - question: I created a course, will I get earnings?
+    answer: No, you can't get earnings by contributing at Learning, you can add a donate paypal button or a BTC address to donate in the description of your course (The file located at "_posts/")
