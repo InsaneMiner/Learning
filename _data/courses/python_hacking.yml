@@ -19,6 +19,8 @@ contents:
   - name: Introduction
     desc: An introduction to the python programming language
     contents:
+      - name: Setting the stage
+        url: /lessons/python_hacking/Intro/stage
 duration: 7hrs
 tutor: sarah
 language: English
