@@ -1,0 +1,28 @@
+title: Python for Penetration testing
+description: Learn how to write your own exploits, web and network analysis and much more
+thumb: /img/courses/python_hacking.jpg
+url: /Python-hacking
+tags:
+  - Beginners
+  - Python
+  - Hacking
+youlearn:
+  - Getting started with python
+  - Python for penetration testing
+  - Web and Network analysis with python
+  - Forensic analysis with python
+  - Wireless devices exploiting
+requirements:
+  - A linux distribution
+  - Python 3.x.x
+contents:
+  - name: Introduction
+    desc: An introduction to the python programming language
+    contents:
+duration: 7hrs
+tutor: sarah
+language: English
+category: hacking
+skillLevel: Beginner
+completed: 0
+featured: 1
