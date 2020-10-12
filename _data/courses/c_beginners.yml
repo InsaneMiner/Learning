@@ -49,6 +49,12 @@ contents:
         url: /lessons/c_beginners/Control/if
       - name: The if-else statement
         url: /lessons/c_beginners/Control/if-else
+      - name: Nested if-elses
+        url: /lessons/c_beginners/Control/nested-if-elses
+      - name:  Forms of if
+        url: /lessons/c_beginners/Control/forms-of-if
+      - name: Use of Logical Operators
+        url: /lessons/c_beginners/Control/logical-operators
 duration: 20hrs
 tutor: sarah
 language: English
