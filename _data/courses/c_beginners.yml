@@ -55,6 +55,8 @@ contents:
         url: /lessons/c_beginners/Control/forms-of-if
       - name: Use of Logical Operators
         url: /lessons/c_beginners/Control/logical-operators
+      - name: The else-if Clause
+        url: /lessons/c_beginners/Control/else-if
 duration: 20hrs
 tutor: sarah
 language: English
