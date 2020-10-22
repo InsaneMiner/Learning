@@ -57,6 +57,15 @@ contents:
         url: /lessons/c_beginners/Control/logical-operators
       - name: The else-if Clause
         url: /lessons/c_beginners/Control/else-if
+      - name: The "!" Operator
+        url: /lessons/c_beginners/Control/no-operator
+      - name: The Conditional operators
+        url: /lessons/c_beginners/Control/conditionals
+      - name: Summary
+        url: /lessons/c_beginners/Control/summary
+  - name: The Loop Control Structure
+    description: Create and learn to manipulate loops
+    contents:
 duration: 20hrs
 tutor: sarah
 language: English

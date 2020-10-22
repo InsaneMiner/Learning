@@ -54,3 +54,11 @@ required libraries by issuing the following command:
 ```bash
 pip install pyPdf python-nmap pygeoip mechanize BeautifulSoup4
 ```
+
+In the following chapters we will be using some bluetooth functions which are
+not available by default nor are available in _pip_ so we can install them by
+using our package manager:
+
+```bash
+pacman -S python-pybluez obexftp
+```

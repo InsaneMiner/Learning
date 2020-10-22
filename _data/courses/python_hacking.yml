@@ -21,6 +21,8 @@ contents:
     contents:
       - name: Setting the stage
         url: /lessons/python_hacking/Intro/stage
+      - name: Interpreted Python Versus Interactive Python
+        url: /lessons/python_hacking/Intro/interpreted
 duration: 7hrs
 tutor: sarah
 language: English
