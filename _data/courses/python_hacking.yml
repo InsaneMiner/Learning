@@ -23,6 +23,12 @@ contents:
         url: /lessons/python_hacking/Intro/stage
       - name: Interpreted Python Versus Interactive Python
         url: /lessons/python_hacking/Intro/interpreted
+      - name: The Python Language
+        url: /lessons/python_hacking/Intro/language
+      - name: Variables
+        url: /lessons/python_hacking/Intro/variables
+      - name: Strings
+        url: /lessons/python_hacking/Intro/strings
 duration: 7hrs
 tutor: sarah
 language: English

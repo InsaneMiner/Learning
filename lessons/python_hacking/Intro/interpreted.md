@@ -1,5 +1,5 @@
 ---
-name: Interpreted Python Versus Interactive Python
+title: Interpreted Python Versus Interactive Python
 course: python_hacking
 section: "Introduction"
 layout: lesson
