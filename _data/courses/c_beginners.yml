@@ -66,6 +66,10 @@ contents:
   - name: The Loop Control Structure
     description: Create and learn to manipulate loops
     contents:
+      - name: Introduction
+        url: /lessons/c_beginners/Loops/intro
+      - name: The while Loop
+        url: /lessons/c_beginners/Loops/while
 duration: 20hrs
 tutor: sarah
 language: English

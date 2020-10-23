@@ -29,6 +29,14 @@ contents:
         url: /lessons/python_hacking/Intro/variables
       - name: Strings
         url: /lessons/python_hacking/Intro/strings
+      - name: Lists
+        url: /lessons/python_hacking/Intro/lists
+      - name: Dictionaries
+        url: /lessons/python_hacking/Intro/dictionaries
+      - name: Networking
+        url: /lessons/python_hacking/Intro/networking
+      - name: Selection
+        url: /lessons/python_hacking/Intro/selection
 duration: 7hrs
 tutor: sarah
 language: English
