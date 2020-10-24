@@ -37,6 +37,8 @@ contents:
         url: /lessons/python_hacking/Intro/networking
       - name: Selection
         url: /lessons/python_hacking/Intro/selection
+      - name: Exception Handling
+        url: /lessons/python_hacking/Intro/exception
 duration: 7hrs
 tutor: sarah
 language: English
