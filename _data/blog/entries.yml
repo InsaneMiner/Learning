@@ -52,3 +52,17 @@ redesign-learning:
   category: Information
   uid: redesign-learning
   thumb: /img/blog/old-learning.png
+
+back-on-learning:
+  title: Learning is back on life
+  description:
+  tutor: sarah
+  date: 2020-11-25
+  url: /blog/entry/back-on-learning
+  tags:
+    - Information
+    - Just chatting
+  language: english
+  category: Information
+  uid: back-on-learning
+  thumb: /img/blog/back-on-learning.jpg

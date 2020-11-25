@@ -1,13 +1,12 @@
 sarah:
   id: sarah
   name: Sarah
-  twitter: https://twitter.com/HermadesCGCO
   pp: /img/tutorIcons/Sarah.jpg
   about: >-
-    Hi!. I'm a grey-hat hacktivist, I am a free software enthusiast
-    I am not a professional but I like teaching other what I know, as the knowledge
-    is worth nothing if it belongs to only one person.<br><br>
-    I am 15 years old, and the creator of Learning. I hope you enjoy it and learn so much <3
+    Hi! I am Sarah, I am a programmer and grey hat hacktivist, I support and work
+    under the free software philosophy. I like to learn things and help others
+    to increase their knowledge, I am not either a teacher or a professional,
+    I simply like the knowledge and want to spread it.
   roles:
     - Hacker
     - Programmer

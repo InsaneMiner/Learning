@@ -69,13 +69,19 @@
 
         <div class="edu_wraper">
           <h4 class="edu_title">Course Overview</h4>
-          {{ content | markdownify }}
           <h6>Requirements</h6>
           <ul class="lists-3">
             {% for requirement in course.requirements %}
               <li>{{ requirement }}</li>
             {% endfor %}
           </ul>
+          <h6>What you'll learn</h6>
+          <ul class="lists-3">
+            {% for topic in course.youlearn %}
+              <li>{{ topic }}</li>
+            {% endfor %}
+          </ul>
+          {{ content | markdownify }}
         </div>
 
         <div class="edu_wraper">

@@ -1,0 +1,24 @@
+title: Social Engineering for beginners
+description: Learn social engineering techniques from scratch
+thumb: /img/courses/social-engineering-beginners.jpg
+url: /SE-Beginners/
+tags:
+  - Hacking
+  - Beginners
+youlearn:
+  - Create malware using Metasploit
+  - Create a backdoor for Android and link it with a real App
+  - Make malware look and behave like normal files
+  - Make malware look like an installer
+  - Access messages, social accounts, GPS and calls of a hacked phone
+  - Escalate your privileges to admin
+requirements:
+  - No previous knowledge is required
+contents:
+duration: 5hrs
+tutor: sarah
+language: English
+category: hacking
+skillLevel: Beginner
+completed: 0
+featured: 1
