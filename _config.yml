@@ -14,13 +14,13 @@ heroText: Learn any topic, any time, completely free and open source.
 facts:
   - icon: ti-video-camera
     title: Quality courses
-    detail: Learn from the courses posted and maintained by the community and blog entries posted by contributors.
+    detail: Learn from courses created by the community and blog entries posted by contributors.
   - icon: ti-infinite
     title: Free access
     detail: All of the content posted in Learning is, and will remain free forever
   - icon: ti-star
     title: Open source
-    detail: Learning is completely open source. Watch and modify its source code.
+    detail: Learning is completely open source. Explore and modify its source code.
 
 shortAbout: >-
   Learning is a completely free and opensource learning platform made in Jekyll by using the <a href="https://codeminifier.com/learnup-1.1">LearnUp</a>
