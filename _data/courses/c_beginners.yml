@@ -74,6 +74,19 @@ contents:
         url: /lessons/c_beginners/Loops/for
       - name: Nesting of Loops
         url: /lessons/c_beginners/Loops/nesting
+      - name: Multiple Initialisations in the for Loop
+        url: /lessons/c_beginners/Loops/multiple_for
+      - name: The Odd Loop
+        url: /lessons/c_beginners/Loops/odd
+      - name: The break Statement
+        url: /lessons/c_beginners/Loops/break
+      - name: The continue Statement
+        url: /lessons/c_beginners/Loops/continue
+      - name: The do-while Loop
+        url: /lessons/c_beginners/Loops/do-while
+  - name: The Case Control Structure
+    description: Let your program to take decisions
+    contents:
 duration: 20hrs
 tutor: sarah
 language: English
