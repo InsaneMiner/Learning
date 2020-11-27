@@ -9,7 +9,7 @@ Hey everybody, welcome to Learning! Thank you so much for using my platform <3.
 
 ## What is Learning?
 
-Learning is a completely free and opensource lms platform (udemy-like), as all
+Learning is a completely libre lms platform (udemy-like), as all
 of those well-known websites you can also create your courses by cloning and
 modifying the source code, you can create/delete/modify already existing
 courses, lessons, blog entries and even create your own learning-based platform.

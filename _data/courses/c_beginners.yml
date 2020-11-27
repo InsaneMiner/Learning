@@ -70,6 +70,10 @@ contents:
         url: /lessons/c_beginners/Loops/intro
       - name: The while Loop
         url: /lessons/c_beginners/Loops/while
+      - name: The for Loop
+        url: /lessons/c_beginners/Loops/for
+      - name: Nesting of Loops
+        url: /lessons/c_beginners/Loops/nesting
 duration: 20hrs
 tutor: sarah
 language: English
