@@ -1,0 +1,52 @@
+title: Man In the Middle Attacks
+description: Learn how to perform and detect Man In the Middle Attacks
+thumb: /img/courses/mitm.jpg
+url: /MITM/
+tags:
+  - Hacking
+  - Beginners
+  - Networking
+youlearn:
+  - Learn how to be the man in the middle in a network connection
+  - Bypass HTTPS/SSL security
+  - Sniff packets
+  - Gain access to any account accessed in your network
+  - ARP Poisoning
+  - DNS Spoofing
+  - Create phishing pages and redirect victims to these sites
+requirements:
+  - Computer with minimum of 4GB ram
+  - GNU/Linux-based operating system
+contents:
+  - name: Introduction
+    description: Getting started with the C language
+    contents:
+      - name: Introduction
+        url: /lessons/mitm/intro/introduction
+  - name: Networking theory
+    description: >-
+      Learn about how networking works and terminology that will be used
+      throughout the course
+    contents:
+  - name: Network scanning
+    description: >-
+      Discover all the devices that are connected to the network, what OS they
+      are using, etc.
+    contents:
+  - name: Attacking
+    description: >-
+      Perform Man In The Middle Attacks to get all the activity a device is
+      running on a device and to even inject malware to gain full access to it.
+    contents:
+  - name: Detecting
+    description: >-
+      Learn how to detect Man In The Middle Attacks, prevent them and to get
+      rid off of an existing Man In The Middle.
+    contents:
+duration: 2hrs
+tutor: sarah
+language: English
+category: hacking
+skillLevel: Beginner
+completed: 0
+featured: 1
