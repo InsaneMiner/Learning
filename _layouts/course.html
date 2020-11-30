@@ -36,8 +36,9 @@
           <div class="ed_header_caption">
             <h2 class="ed_title">{{ course.title }}</h2>
             <ul>
-              <li><i class="ti-calendar"></i> {{ course.duration }}</li>
-              <li><i class="ti-control-forward"></i> {{ lessons }} lessons</li>
+              <li><i class="fa fa-calendar"></i> {{ course.duration }}</li>
+              <li><i class="fa fa-book"></i> {{ lessons }} lessons</li>
+              <li><i class="fa fa-clock"></i> {{ page.date | date_to_long_string }}</li>
             </ul>
           </div>
 
