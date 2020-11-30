@@ -87,6 +87,8 @@ contents:
   - name: The Case Control Structure
     description: Let your program to take decisions
     contents:
+      - name: Decisions Using switch
+        url: /lessons/c_beginners/Cases/switch
 duration: 20hrs
 tutor: sarah
 language: English
