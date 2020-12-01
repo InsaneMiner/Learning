@@ -28,6 +28,10 @@ contents:
       Learn about how networking works and terminology that will be used
       throughout the course
     contents:
+      - name: Network Basics
+        url: /lessons/mitm/network/basics
+      - name: MAC address
+        url: /lessons/mitm/network/mac
   - name: Network scanning
     description: >-
       Discover all the devices that are connected to the network, what OS they
