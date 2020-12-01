@@ -49,10 +49,7 @@
       var titles = getObjects(finalJSON, "title", term)
       var tags = getObjects(finalJSON, "tags", term)
 
-      var objects = [
-          ...titles,
-          ...tags
-      ]
+      var objects = titles.concat(tags)
 
       for(var i = 0; i < objects.length; i++) {
           if(objects[i].type === "blog") {
